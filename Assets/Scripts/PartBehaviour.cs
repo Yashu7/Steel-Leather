@@ -22,7 +22,7 @@ public class PartBehaviour : MonoBehaviour
     }
     void OnMouseDown()
     {
-        Debug.Log(LeatherCost + " " + SteelCost);
+        Debug.Log("Leather Cost:" + LeatherCost + " SteelCost: " + SteelCost);
 
         
     }
