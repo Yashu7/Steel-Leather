@@ -23,13 +23,16 @@ public class ForgeItem : MonoBehaviour
     }
     void ButtonClicked()
     {
-        actualJob = GameObject.FindWithTag("Clicked");
-        gameGenerator = GameObject.FindWithTag("Player");
-        gameGenerator.GetComponent<PlayerInventory>().DeduceLeatherCost(actualJob.GetComponent<PartBehaviour>().ReturnLeather());
-        gameGenerator.GetComponent<PlayerInventory>().DeduceSteelCost(actualJob.GetComponent<PartBehaviour>().ReturnSteel());
-        Destroy(actualJob);
+        if (GameObject.FindWithTag("Clicked"))
+        {
+            actualJob = GameObject.FindWithTag("Clicked");
+            gameGenerator = GameObject.FindWithTag("Player");
+            gameGenerator.GetComponent<PlayerInventory>().DeduceLeatherCost(actualJob.GetComponent<PartBehaviour>().ReturnLeather());
+            gameGenerator.GetComponent<PlayerInventory>().DeduceSteelCost(actualJob.GetComponent<PartBehaviour>().ReturnSteel());
+            Destroy(actualJob);
+        }
 
-        //Destroy(actualJob);
+        
 
 
 

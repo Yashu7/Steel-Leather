@@ -22,5 +22,9 @@ public class HowMuchSteel : MonoBehaviour
             amount = steelCost.GetComponent<PartBehaviour>().ReturnSteel().ToString();
             gameObject.GetComponent<Text>().text = amount;
         }
+        else
+        {
+            gameObject.GetComponent<Text>().text = "0";
+        }
     }
 }

@@ -16,11 +16,16 @@ public class HowMuchLeather : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if  (GameObject.FindWithTag("Clicked"))
+        if (GameObject.FindWithTag("Clicked"))
         {
             leatherCost = GameObject.FindWithTag("Clicked");
             amount = leatherCost.GetComponent<PartBehaviour>().ReturnLeather().ToString();
             gameObject.GetComponent<Text>().text = amount;
         }
+        else
+        {
+            gameObject.GetComponent<Text>().text = "0";
+        }
     }
-}
+    }
+
