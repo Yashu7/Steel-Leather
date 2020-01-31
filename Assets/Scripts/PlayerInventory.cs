@@ -10,6 +10,7 @@ public class PlayerInventory : MonoBehaviour
     public bool ourStats;
     public GameObject leatherCount;
     public GameObject steelCount;
+    public int Gold;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class PlayerInventory : MonoBehaviour
         { 
         Leather = 10;
         Steel = 10;
+        Gold = 100;
         }
     }
 
@@ -39,5 +41,13 @@ public class PlayerInventory : MonoBehaviour
     public int DeduceSteelCost(int cost)
     {
         return Steel = Steel - cost;
+    }
+    public void AddGold(int prize)
+    {
+        Gold = Gold + prize;
+    }
+    public void DeduceGold(int prize)
+    {
+        Gold = Gold - prize;
     }
 }
