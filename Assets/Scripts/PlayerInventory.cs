@@ -32,4 +32,12 @@ public class PlayerInventory : MonoBehaviour
 
 
     }
+    public int DeduceLeatherCost(int cost)
+    {
+        return Leather = Leather - cost;
+    }
+    public int DeduceSteelCost(int cost)
+    {
+        return Steel = Steel - cost;
+    }
 }

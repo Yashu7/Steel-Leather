@@ -9,6 +9,8 @@ public class GenerateJob : MonoBehaviour
     void Start()
     {
         Instantiate(part, new Vector3(1 , 1, 0), Quaternion.identity);
+        Instantiate(part, new Vector3(5, 1, 0), Quaternion.identity);
+        Instantiate(part, new Vector3(-5, 1, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
