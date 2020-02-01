@@ -25,7 +25,10 @@ public class CounterBehaviour : MonoBehaviour
         Debug.Log("Creating counter");
         currentTimeInSec = Random.Range(minStartingTimeInSec, maxStartingTimeInSec);
 
+        gameObject.GetComponent<Text>().color = Color.black;
+        gameObject.GetComponent<Text>().enabled = true;
         InvokeRepeating("OutputTime", 1.0f, 1.0f);
+        InvokeRepeating("FlashWarning", 0.5f, 0.5f);
     }
 
     void OutputTime() {
@@ -46,9 +49,23 @@ public class CounterBehaviour : MonoBehaviour
      currentTimeInSec--;
  }
 
+    void FlashWarning()
+    {
+        if(currentTimeInSec < 1) {
+            return;
+        }
+        if(currentTimeInSec < 10) 
+     {
+         Text textComponent = gameObject.GetComponent<Text>();
+        textComponent.color = Color.red;
+        textComponent.enabled = !textComponent.enabled;
+     } 
+    }
+
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Text>().text = currentTimeInSec.ToString(); 
+        Text textComponent = gameObject.GetComponent<Text>();
+        textComponent.text = currentTimeInSec.ToString(); 
     }
 }
