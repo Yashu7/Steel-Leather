@@ -12,6 +12,9 @@ public class PlayerInventory : MonoBehaviour
     public GameObject leatherCount;
     public GameObject steelCount;
     public int Gold;
+
+    public AudioClip impact;
+    private AudioSource insufficientResouceSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,14 +43,24 @@ public class PlayerInventory : MonoBehaviour
     {
         if(cost > Leather)
         {
+            PlayInsufficienResourceWarning();
             return 0;
         }
         return Leather = Leather - cost;
     }
+
+    private void PlayInsufficienResourceWarning()
+    {
+        Debug.Log("playing sound");
+        insufficientResouceSound = GetComponent<AudioSource>();
+        insufficientResouceSound.PlayOneShot(impact, 0.7F);
+    }
+
     public int DeduceSteelCost(int cost)
     {
         if(cost > Steel)
         {
+            PlayInsufficienResourceWarning();
             return 0;
         }
         return Steel = Steel - cost;
@@ -82,6 +95,19 @@ public class PlayerInventory : MonoBehaviour
     {
         if(LeatherCost > Leather || SteelCost > Steel)
         {
+            PlayInsufficienResourceWarning();
+            // if(LeatherCost > Leather) {
+            //     GameObject leatherDisplay = GameObject.Find("MyLeather");
+            //     leatherDisplay.GetComponent<Text>().font.size +=2;
+            //     //todo not enough leader on top of screen
+            //     Invoke("RemoveLeaderWarning", 1.0f);
+            // }
+            // if(SteelCost > Steel) {
+            //     GameObject steelDisplay = GameObject.Find("MySteel");
+            //     steelDisplay.GetComponent<Text>().font.size +=2;
+            //     //todo not enough leader on top of screen
+            //     Invoke("RemoveSteelWarning", 1.0f);
+            // }
             return false;
         }
         else
@@ -89,6 +115,19 @@ public class PlayerInventory : MonoBehaviour
             return true;
         }
     }
+
+    // void RemoveSteelWarning()
+    // {
+    //     GameObject steelDisplay = GameObject.Find("MySteel");
+    //             steelDisplay.GetComponent<Text>().font.size -=2;
+    // }
+
+    // void RemoveLeaderWarning()
+    // {
+    //     GameObject leatherDisplay = GameObject.Find("MyLeather");
+    //     leatherDisplay.GetComponent<Text>().font.size -=2;
+    // }
+
     public void SellLeather()
     {
         if (Leather > 0)
