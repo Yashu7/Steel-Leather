@@ -22,4 +22,8 @@ public class ScoreBehaviour : MonoBehaviour
     {
         score += 100;
     }
+    public int GetScore()
+    {
+        return score;
+    }
 }

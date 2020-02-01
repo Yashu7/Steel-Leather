@@ -1179,7 +1179,7 @@ MonoBehaviour:
   maxStartingTimeInSec: 40
   slot: {fileID: 7213091847549203642}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
-  penaltyForUnfinishedJob: 100
+  penaltyForUnfinishedJob: 25
 --- !u!82 &531283398
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1375,7 +1375,7 @@ MonoBehaviour:
   maxStartingTimeInSec: 40
   slot: {fileID: 1348462006}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
-  penaltyForUnfinishedJob: 100
+  penaltyForUnfinishedJob: 25
 --- !u!82 &579938144
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4379,7 +4379,7 @@ MonoBehaviour:
   maxStartingTimeInSec: 40
   slot: {fileID: 1230684768}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
-  penaltyForUnfinishedJob: 100
+  penaltyForUnfinishedJob: 25
 --- !u!82 &2093731467
 AudioSource:
   m_ObjectHideFlags: 0

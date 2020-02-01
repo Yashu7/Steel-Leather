@@ -6,17 +6,50 @@ public class PartBehaviour : MonoBehaviour
 {
     public int LeatherCost;
     public int SteelCost;
-    public int maxRange = 5;
-    public int minRange = 1;
+    public int maxRange;
+    public int minRange;
     [SerializeField]
     private bool isFixed;
     private SlotBehaviour parentSlot;
+    public enum difficulty  {easy,medium,hard };
+    public int score;
+    public difficulty dif;
 
     
-
+    public void difficultyLevel()
+    {
+       score = GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().GetScore();
+        if (score < 1000)
+        {
+            dif = difficulty.easy;
+        }
+        if (score > 1000 & score < 2000)
+        {
+            dif = difficulty.medium;
+        }
+        if (score > 2000)
+        {
+            dif = difficulty.hard;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
+        if(dif == difficulty.easy)
+        {
+            maxRange = 2;
+            minRange = 1;
+        }
+        if (dif == difficulty.medium)
+        {
+            maxRange = 5;
+            minRange = 2;
+        }
+        if(dif == difficulty.hard)
+        {
+            maxRange = 7;
+            minRange = 4;
+        }
         LeatherCost = Random.Range(minRange, maxRange);
         SteelCost = Random.Range(minRange, maxRange);
     }
@@ -60,6 +93,8 @@ public class PartBehaviour : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
         }
+        difficultyLevel();
+        
     }
     void OnMouseDown()
     {
