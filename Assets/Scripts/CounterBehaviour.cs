@@ -14,6 +14,9 @@ public class CounterBehaviour : MonoBehaviour
     private AudioSource soundSource;
 
     public int penaltyForUnfinishedJob = 25;
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +30,8 @@ public class CounterBehaviour : MonoBehaviour
 
         gameObject.GetComponent<Text>().color = Color.black;
         gameObject.GetComponent<Text>().enabled = true;
-        InvokeRepeating("OutputTime", 1.0f, 1.0f);
-        InvokeRepeating("FlashWarning", 0.5f, 0.5f);
+        InvokeRepeating("OutputTime", 1, 1);
+        InvokeRepeating("FlashWarning", 1, 1);
     }
 
     void OutputTime() {
@@ -37,7 +40,7 @@ public class CounterBehaviour : MonoBehaviour
          Debug.Log("Dropping job");
          Debug.Log("Removing gold");
          GameObject gg = GameObject.Find("GameGenerator");
-            Debug.Log("I lost muh money");
+           
             gg.GetComponent<PlayerInventory>().DeduceGold(penaltyForUnfinishedJob);
             slot.GetComponent<SlotBehaviour>().Fail();
 
@@ -46,8 +49,9 @@ public class CounterBehaviour : MonoBehaviour
 
          return;
      }
-     currentTimeInSec--;
- }
+
+        currentTimeInSec--;
+    }
 
     void FlashWarning()
     {
