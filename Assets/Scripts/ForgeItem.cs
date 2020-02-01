@@ -29,6 +29,7 @@ public class ForgeItem : MonoBehaviour
             gameGenerator = GameObject.FindWithTag("Player");
             gameGenerator.GetComponent<PlayerInventory>().DeduceLeatherCost(actualJob.GetComponent<PartBehaviour>().ReturnLeather());
             gameGenerator.GetComponent<PlayerInventory>().DeduceSteelCost(actualJob.GetComponent<PartBehaviour>().ReturnSteel());
+            gameGenerator.GetComponent<PlayerInventory>().AddGold(50);
             Destroy(actualJob);
         }
 
