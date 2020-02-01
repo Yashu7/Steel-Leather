@@ -14,18 +14,18 @@ public class PlayerInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(!ourStats)
-        { 
-        Leather = 10;
-        Steel = 10;
-        Gold = 100;
+        if (!ourStats)
+        {
+            Leather = 10;
+            Steel = 10;
+            Gold = 100;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         leatherCount = GameObject.Find("MyLeather");
         leatherCount.GetComponent<Text>().text = Leather.ToString();
 
@@ -49,5 +49,18 @@ public class PlayerInventory : MonoBehaviour
     public void DeduceGold(int prize)
     {
         Gold = Gold - prize;
+    }
+    public void BuyLeather()
+    {
+
+        Leather++;
+    }
+    public void BuySteel()
+    {
+        Steel++;
+    }
+    public int HowMuchGold()
+    {
+        return Gold;
     }
 }
