@@ -28,17 +28,17 @@ public class SlotBehaviour : MonoBehaviour
         float parentX = gameObject.transform.position.x;
         float parentY = gameObject.transform.position.y + 1;
         //Helmet
-        AddPart(parentX, parentY, true);
+        AddPart(parentX, parentY+0.1F, true);
         //Left Hand
-        AddPart(parentX-partOffset-0.1F, parentY-partOffset-0.25F);
+        AddPart(parentX-partOffset-0.1F, parentY-partOffset);
         //Right Hand
-        AddPart(parentX+partOffset+0.1F, parentY-partOffset - 0.25F, true);
+        AddPart(parentX+partOffset+0.1F, parentY-partOffset, true);
         //Breast Plate
-        AddPart(parentX, parentY-(partOffset + 0.5F));
+        AddPart(parentX, parentY-(partOffset + 0.25F));
         //Left Leg
-        AddPart(parentX-partOffset+0.5F, parentY-(partOffset*2.8F));
+        AddPart(parentX-partOffset+0.5F, parentY-(partOffset*2.4F));
         //Right Leg
-        AddPart(parentX+partOffset-0.5F, parentY-(partOffset*2.8F));
+        AddPart(parentX+partOffset-0.5F, parentY-(partOffset*2.4F));
 
 
         counter.GetComponent<CounterBehaviour>().Restart();
