@@ -16,6 +16,9 @@ public class SlotBehaviour : MonoBehaviour
     private int toFix = 0;
     public Sprite s;
 
+    public int GoldReward = 10;
+    private bool finished;
+
 
     void Start()
     {
@@ -44,6 +47,7 @@ public class SlotBehaviour : MonoBehaviour
 
         counter.GetComponent<CounterBehaviour>().Restart();
         resultDisplay.GetComponent<Text>().text = "";
+        finished = false;
     }
 
     void AddPart(float x, float y, bool isBroken = false)
@@ -75,8 +79,10 @@ public class SlotBehaviour : MonoBehaviour
 
     public void Success()
     {
+        finished = true;
+        Debug.Log("Succeess");
         resultDisplay.GetComponent<Text>().text = "Job Done!";
-        
+        GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().AddGold(GoldReward);
         Invoke("Clear",0.5f);
     }
 
@@ -101,7 +107,7 @@ public class SlotBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (parts.Count < 1)
+        if (parts.Count < 1 || finished)
         {
             return;
         }
@@ -117,7 +123,6 @@ public class SlotBehaviour : MonoBehaviour
         if (toFix < 1)
         {
             Debug.Log("Job done!");
-            
             Success();
         }
     }
