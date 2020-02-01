@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class SlotBehaviour : MonoBehaviour
 {
     private List<GameObject> parts = new List<GameObject>();
+    public List<Sprite> partSprite = new List<Sprite>();
     public GameObject partPrefab;
     public GameObject counter; 
     public GameObject resultDisplay;
     public int partsCounter = 3;
     const float partOffset = 0.6f;
     private int toFix = 0;
+    public Sprite s;
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +26,17 @@ public class SlotBehaviour : MonoBehaviour
 
         float parentX = gameObject.transform.position.x;
         float parentY = gameObject.transform.position.y + 1;
-        
+        //Helmet
         AddPart(parentX, parentY, true);
+        //Left Hand
         AddPart(parentX-partOffset, parentY-partOffset);
+        //Right Hand
         AddPart(parentX+partOffset, parentY-partOffset, true);
+        //Breast Plate
         AddPart(parentX, parentY-(partOffset*2));
+        //Left Leg
         AddPart(parentX-partOffset, parentY-(partOffset*3));
+        //Right Leg
         AddPart(parentX+partOffset, parentY-(partOffset*3));
 
 
@@ -46,8 +53,11 @@ public class SlotBehaviour : MonoBehaviour
                 0
                 )
                 , Quaternion.identity);
-            parts.Add(part);
-            part.GetComponent<PartBehaviour>().SetParrentSlot(this);
+        s =  partSprite[parts.Count];
+        part.GetComponent<SpriteRenderer>().sprite = s;
+        parts.Add(part);
+        
+        part.GetComponent<PartBehaviour>().SetParrentSlot(this);
             if(!isBroken) {
                 part.GetComponent<PartBehaviour>().Fix();
             } else {
