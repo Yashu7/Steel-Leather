@@ -16,14 +16,15 @@ public class SlotBehaviour : MonoBehaviour
     private int toFix = 0;
     public Sprite s;
 
-    public int GoldReward = 10;
+    public int GoldReward = 25;
     private bool broken;
     private bool finished;
+    
 
 
     void Start()
-    {
-        
+    { 
+
     }
     public bool RandomItem(bool broke)
     {

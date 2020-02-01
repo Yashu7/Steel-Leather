@@ -25,7 +25,7 @@ public class PlayerInventory : MonoBehaviour
         {
             Leather = 10;
             Steel = 10;
-            StartingGold = 100;
+            StartingGold = 150;
         }
 
         Gold = StartingGold;
