@@ -13,8 +13,9 @@ public class PlayerInventory : MonoBehaviour
     public GameObject steelCount;
     public int Gold;
 
-    public AudioClip impact;
-    private AudioSource insufficientResouceSound;
+    public AudioClip insufficientResouceSound;
+    public AudioClip addGoldSound;
+    private AudioSource soundSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,8 +53,8 @@ public class PlayerInventory : MonoBehaviour
     private void PlayInsufficienResourceWarning()
     {
         Debug.Log("playing sound");
-        insufficientResouceSound = GetComponent<AudioSource>();
-        insufficientResouceSound.PlayOneShot(impact, 0.7F);
+        soundSource = GetComponent<AudioSource>();
+        soundSource.PlayOneShot(insufficientResouceSound, 0.7F);
     }
 
     public int DeduceSteelCost(int cost)
@@ -68,6 +69,9 @@ public class PlayerInventory : MonoBehaviour
     public void AddGold(int prize)
     {
         Gold = Gold + prize;
+
+        soundSource = GetComponent<AudioSource>();
+        soundSource.PlayOneShot(addGoldSound, 0.7F);
     }
     public void DeduceGold(int prize)
     {

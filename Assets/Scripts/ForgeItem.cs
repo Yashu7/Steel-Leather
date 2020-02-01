@@ -10,6 +10,9 @@ public class ForgeItem : MonoBehaviour
     public GameObject gameGenerator;
     public Animator anim;
 
+    public AudioClip anvilHitSoundClip;
+    private AudioSource anvilHitSoundSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +44,8 @@ public class ForgeItem : MonoBehaviour
 
                 //fix part - notify slot
                 currentPart.GetComponent<PartBehaviour>().Fix();
+
+                PlayHit();
             }
             
         }
@@ -50,6 +55,13 @@ public class ForgeItem : MonoBehaviour
 
 
 
+    }
+
+     private void PlayHit()
+    {
+        Debug.Log("playing sound");
+        anvilHitSoundSource = GetComponent<AudioSource>();
+        anvilHitSoundSource.PlayOneShot(anvilHitSoundClip, 0.7F);
     }
 
 }
