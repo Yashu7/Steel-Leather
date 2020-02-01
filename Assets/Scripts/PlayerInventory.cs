@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -57,6 +58,11 @@ public class PlayerInventory : MonoBehaviour
     }
     public void DeduceGold(int prize)
     {
+        if(Gold < 1) {
+            //todo refactor to sepeate script
+            Debug.Log("Load game over scene");
+            SceneManager.LoadScene (sceneName:"GameOver");
+        }
         Gold = Gold - prize;
     }
     public void BuyLeather()
