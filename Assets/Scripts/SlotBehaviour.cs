@@ -17,14 +17,19 @@ public class SlotBehaviour : MonoBehaviour
     public Sprite s;
 
     public int GoldReward = 10;
+    private bool broken;
     private bool finished;
 
 
     void Start()
     {
-
+        
     }
-
+    public bool RandomItem(bool broke)
+    {
+        broke = (Random.Range(0, 2) == 0);
+        return broke;
+    }
     public void Repopulate()
     {
         Debug.Log("Repopulating slot");
@@ -32,17 +37,17 @@ public class SlotBehaviour : MonoBehaviour
         float parentX = gameObject.transform.position.x;
         float parentY = gameObject.transform.position.y + 1;
         //Helmet
-        AddPart(parentX, parentY + 0.1F, true);
+        AddPart(parentX, parentY + 0.1F, RandomItem(broken));
         //Left Hand
-        AddPart(parentX - partOffset - 0.1F, parentY - partOffset);
+        AddPart(parentX - partOffset - 0.1F, parentY - partOffset, RandomItem(broken));
         //Right Hand
-        AddPart(parentX + partOffset + 0.1F, parentY - partOffset, true);
+        AddPart(parentX + partOffset + 0.1F, parentY - partOffset, RandomItem(broken));
         //Breast Plate
-        AddPart(parentX, parentY - (partOffset + 0.25F));
+        AddPart(parentX, parentY - (partOffset + 0.25F),RandomItem(broken));
         //Left Leg
-        AddPart(parentX - partOffset + 0.5F, parentY - (partOffset * 2.4F));
+        AddPart(parentX - partOffset + 0.5F, parentY - (partOffset * 2.4F), RandomItem(broken));
         //Right Leg
-        AddPart(parentX + partOffset - 0.5F, parentY - (partOffset * 2.4F));
+        AddPart(parentX + partOffset - 0.5F, parentY - (partOffset * 2.4F), RandomItem(broken));
 
 
         counter.GetComponent<CounterBehaviour>().Restart();
