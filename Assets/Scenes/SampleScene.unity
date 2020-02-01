@@ -2260,7 +2260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48, y: -102}
+  m_AnchoredPosition: {x: 60, y: -102}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648440359
@@ -2428,6 +2428,11 @@ MonoBehaviour:
   firstSlot: {fileID: 7213091847549203642}
   secondSlot: {fileID: 1348462006}
   thirdSlot: {fileID: 1230684768}
+  part: {fileID: 8423518746985819946, guid: f027aef45a6ee494b9cc0e798961b76e, type: 3}
+  parentJob: {fileID: 0}
+  firstJob: {fileID: 0}
+  secondJob: {fileID: 0}
+  thirdJob: {fileID: 0}
   createdJobs: []
 --- !u!4 &1758168899
 Transform:
