@@ -1098,8 +1098,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTimeInSec: 0
-  minStartingTimeInSec: 10
-  maxStartingTimeInSec: 20
+  minStartingTimeInSec: 30
+  maxStartingTimeInSec: 40
   slot: {fileID: 7213091847549203642}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
   penaltyForUnfinishedJob: 100
@@ -1294,8 +1294,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTimeInSec: 0
-  minStartingTimeInSec: 10
-  maxStartingTimeInSec: 20
+  minStartingTimeInSec: 30
+  maxStartingTimeInSec: 40
   slot: {fileID: 1348462006}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
   penaltyForUnfinishedJob: 100
@@ -3999,8 +3999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTimeInSec: 0
-  minStartingTimeInSec: 10
-  maxStartingTimeInSec: 20
+  minStartingTimeInSec: 30
+  maxStartingTimeInSec: 40
   slot: {fileID: 1230684768}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
   penaltyForUnfinishedJob: 100
