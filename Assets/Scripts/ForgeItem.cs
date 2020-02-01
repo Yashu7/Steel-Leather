@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ForgeItem : MonoBehaviour
 {
     public Button forge;
-    public GameObject actualJob;
+    public GameObject currentPart;
     public GameObject gameGenerator;
     
     // Start is called before the first frame update
@@ -25,14 +25,15 @@ public class ForgeItem : MonoBehaviour
     {
         if (GameObject.FindWithTag("Clicked"))
         {
-            actualJob = GameObject.FindWithTag("Clicked");
+            currentPart = GameObject.FindWithTag("Clicked");
             gameGenerator = GameObject.FindWithTag("Player");
-            if (gameGenerator.GetComponent<PlayerInventory>().CanIForge(actualJob.GetComponent<PartBehaviour>().ReturnLeather(), actualJob.GetComponent<PartBehaviour>().ReturnSteel()))
+            if (gameGenerator.GetComponent<PlayerInventory>().CanIForge(currentPart.GetComponent<PartBehaviour>().ReturnLeather(), currentPart.GetComponent<PartBehaviour>().ReturnSteel()))
             {
-                gameGenerator.GetComponent<PlayerInventory>().DeduceLeatherCost(actualJob.GetComponent<PartBehaviour>().ReturnLeather());
-                gameGenerator.GetComponent<PlayerInventory>().DeduceSteelCost(actualJob.GetComponent<PartBehaviour>().ReturnSteel());
-                gameGenerator.GetComponent<PlayerInventory>().AddGold(50);
-                Destroy(actualJob);
+                gameGenerator.GetComponent<PlayerInventory>().DeduceLeatherCost(currentPart.GetComponent<PartBehaviour>().ReturnLeather());
+                gameGenerator.GetComponent<PlayerInventory>().DeduceSteelCost(currentPart.GetComponent<PartBehaviour>().ReturnSteel());
+
+                //fix part - notify slot
+                currentPart.GetComponent<PartBehaviour>().Fix();
             }
             
         }
