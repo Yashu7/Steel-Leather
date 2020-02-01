@@ -34,12 +34,21 @@ public class PlayerInventory : MonoBehaviour
 
 
     }
+    //TO-DO: FINISH
     public int DeduceLeatherCost(int cost)
     {
+        if(cost > Leather)
+        {
+            return 0;
+        }
         return Leather = Leather - cost;
     }
     public int DeduceSteelCost(int cost)
     {
+        if(cost > Steel)
+        {
+            return 0;
+        }
         return Steel = Steel - cost;
     }
     public void AddGold(int prize)
