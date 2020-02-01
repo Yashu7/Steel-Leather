@@ -83,6 +83,7 @@ public class SlotBehaviour : MonoBehaviour
         Debug.Log("Succeess");
         resultDisplay.GetComponent<Text>().text = "Job Done!";
         GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().AddGold(GoldReward);
+        GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().JobComplete();
         Invoke("Clear",0.5f);
     }
 
