@@ -9,6 +9,8 @@ public class CounterBehaviour : MonoBehaviour
     public int minStartingTimeInSec = 5;
     public int maxStartingTimeInSec = 15;
     public GameObject slot;
+    public Image bar;
+    
 
     public AudioClip outOfTimeSound;
     private AudioSource soundSource;
@@ -20,7 +22,7 @@ public class CounterBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1.0f;
     }
 
     public void Restart() 
@@ -28,10 +30,16 @@ public class CounterBehaviour : MonoBehaviour
         Debug.Log("Creating counter");
         currentTimeInSec = Random.Range(minStartingTimeInSec, maxStartingTimeInSec);
 
-        gameObject.GetComponent<Text>().color = Color.black;
+        gameObject.GetComponent<Text>().color = Color.white;
         gameObject.GetComponent<Text>().enabled = true;
         InvokeRepeating("OutputTime", 1, 1);
-        InvokeRepeating("FlashWarning", 1, 1);
+       // InvokeRepeating("FlashWarning", 1, 1);
+       
+    }
+    public IEnumerator MyClock()
+    {
+        currentTimeInSec--;
+        yield return new WaitForSeconds(1);
     }
 
     void OutputTime() {
@@ -50,7 +58,7 @@ public class CounterBehaviour : MonoBehaviour
          return;
      }
 
-        currentTimeInSec--;
+        StartCoroutine(MyClock());
     }
 
     void FlashWarning()
