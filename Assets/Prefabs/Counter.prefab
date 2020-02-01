@@ -47,3 +47,5 @@ MonoBehaviour:
   minStartingTimeInSec: 5
   maxStartingTimeInSec: 15
   displayCounter: {fileID: 0}
+  job: {fileID: 0}
+  penaltyForUnfinishedJob: 25
