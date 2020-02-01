@@ -100,6 +100,8 @@ MonoBehaviour:
   maxRange: 5
   minRange: 1
   jobs: []
+  counterInstance: {fileID: 0}
+  counter: {fileID: 8561133599460018945, guid: fdb0fe4001e554355aed7061690965ba, type: 3}
 --- !u!61 &2515474139833002266
 BoxCollider2D:
   m_ObjectHideFlags: 0

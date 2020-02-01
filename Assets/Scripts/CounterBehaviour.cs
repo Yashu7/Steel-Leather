@@ -9,7 +9,9 @@ public class CounterBehaviour : MonoBehaviour
     public int minStartingTimeInSec = 5;
     public int maxStartingTimeInSec = 15;
     public GameObject displayCounter;
-    public GenerateJob job;
+    public GameObject job;
+
+    private int jobIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +21,19 @@ public class CounterBehaviour : MonoBehaviour
         InvokeRepeating("OutputTime", 1.0f, 1.0f);
     }
 
-    public void AttachJob(GenerateJob jobToAttach) {
+    public void AttachJob(GameObject jobToAttach) {
         job = jobToAttach;
+    }
+
+    public void SetIndex(int index) {
+            jobIndex = index;
     }
 
     void OutputTime() {
      if(currentTimeInSec < 1) {
          CancelInvoke();
          Debug.Log("Dropping part");
-         job.removePart();
+         Destroy(job);
          return;
      }
      currentTimeInSec--;
@@ -36,7 +42,10 @@ public class CounterBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        displayCounter = GameObject.Find("Counter1");
-        displayCounter.GetComponent<Text>().text = currentTimeInSec.ToString();
+        if(jobIndex > 0) {
+           displayCounter = GameObject.Find("Counter" + jobIndex);
+        displayCounter.GetComponent<Text>().text = currentTimeInSec.ToString(); 
+        }
+        
     }
 }

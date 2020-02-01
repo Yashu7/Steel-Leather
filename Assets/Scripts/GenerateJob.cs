@@ -5,9 +5,6 @@ using UnityEngine;
 public class GenerateJob : MonoBehaviour
 {
     public GameObject part;
-    public GameObject counter;
-
-    private GameObject counterInstance;
 
     public GameObject firstJob;
     public GameObject secondJob;
@@ -18,15 +15,11 @@ public class GenerateJob : MonoBehaviour
     void Start()
     {
         thirdJob = Instantiate(part, new Vector3(5, 1, 0), Quaternion.identity);
+        thirdJob.GetComponent<PartBehaviour>().SetIndex(3);
         secondJob = Instantiate(part, new Vector3(1, 1, 0), Quaternion.identity);
+        secondJob.GetComponent<PartBehaviour>().SetIndex(2);
         firstJob = Instantiate(part, new Vector3(-5, 1, 0), Quaternion.identity);
-
-        counterInstance = Instantiate(counter, new Vector3(1,1,0), Quaternion.identity);
-        counterInstance.GetComponent<CounterBehaviour>().AttachJob(this);
-    }
-
-    public void removePart() {
-        Destroy(firstJob);
+        firstJob.GetComponent<PartBehaviour>().SetIndex(1);
     }
 
     // Update is called once per frame
@@ -35,16 +28,19 @@ public class GenerateJob : MonoBehaviour
         if (secondJob == null)
         {
             secondJob = Instantiate(part, new Vector3(1, 1, 0), Quaternion.identity);
+            secondJob.GetComponent<PartBehaviour>().SetIndex(2);
            
         }
         if (firstJob == null)
         {
             firstJob = Instantiate(part, new Vector3(-5, 1, 0), Quaternion.identity);
+            firstJob.GetComponent<PartBehaviour>().SetIndex(1);
 
         }
         if (thirdJob == null)
         {
             thirdJob = Instantiate(part, new Vector3(5, 1, 0), Quaternion.identity);
+            thirdJob.GetComponent<PartBehaviour>().SetIndex(3);
 
         }
     }
