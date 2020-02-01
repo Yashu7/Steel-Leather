@@ -35,7 +35,7 @@ public class PlayerInventory : MonoBehaviour
 
 
     }
-    //TO-DO: FINISH
+   
     public int DeduceLeatherCost(int cost)
     {
         if(cost > Leather)
