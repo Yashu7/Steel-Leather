@@ -12,6 +12,8 @@ public class PlayerInventory : MonoBehaviour
     public GameObject leatherCount;
     public GameObject steelCount;
     public int Gold;
+    public int StartingGold;
+    public GameObject goldCount;
 
     public AudioClip insufficientResouceSound;
     public AudioClip addGoldSound;
@@ -23,8 +25,10 @@ public class PlayerInventory : MonoBehaviour
         {
             Leather = 10;
             Steel = 10;
-            Gold = 100;
+            StartingGold = 100;
         }
+
+        Gold = StartingGold;
     }
 
     // Update is called once per frame
@@ -37,7 +41,8 @@ public class PlayerInventory : MonoBehaviour
         steelCount = GameObject.Find("MySteel");
         steelCount.GetComponent<Text>().text = Steel.ToString();
 
-
+        goldCount = GameObject.Find("MyGold");
+        goldCount.GetComponent<Text>().text = Gold.ToString();
     }
    
     public int DeduceLeatherCost(int cost)
