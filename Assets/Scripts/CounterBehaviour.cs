@@ -29,10 +29,10 @@ public class CounterBehaviour : MonoBehaviour
      if(currentTimeInSec < 1) {
          CancelInvoke();
          Debug.Log("Dropping job");
-         slot.GetComponent<SlotBehaviour>().Clear();
          Debug.Log("Removing gold");
          GameObject gg = GameObject.Find("GameGenerator");
             gg.GetComponent<PlayerInventory>().DeduceGold(penaltyForUnfinishedJob);
+            slot.GetComponent<SlotBehaviour>().Fail();
          return;
      }
      currentTimeInSec--;

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlotBehaviour : MonoBehaviour
 {
     private List<GameObject> parts = new List<GameObject>();
     public GameObject partPrefab;
     public GameObject counter; 
+    public GameObject resultDisplay;
     public int partsCounter = 3;
     const float partOffset = 0.6f;
     private int toFix = 0;
@@ -32,6 +34,7 @@ public class SlotBehaviour : MonoBehaviour
 
 
         counter.GetComponent<CounterBehaviour>().Restart();
+        resultDisplay.GetComponent<Text>().text = "";
     }
 
     void AddPart(float x, float y, bool isBroken= false) 
@@ -50,6 +53,18 @@ public class SlotBehaviour : MonoBehaviour
             } else {
                 part.GetComponent<PartBehaviour>().Break();
             }
+    }
+
+    public void Success() 
+    {
+        resultDisplay.GetComponent<Text>().text = "Job Done!";
+        Clear();
+    }
+
+    public void Fail() 
+    {
+        resultDisplay.GetComponent<Text>().text = "Fail!";
+        Clear();
     }
 
     public void Clear() {
@@ -76,7 +91,7 @@ public class SlotBehaviour : MonoBehaviour
         //Debug.Log("parts to fix:" + toFix.ToString());
         if(toFix < 1) {
             Debug.Log("Job done!");
-           Clear();
+           Success();
         }
     }
 }
