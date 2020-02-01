@@ -83,4 +83,20 @@ public class PlayerInventory : MonoBehaviour
             return true;
         }
     }
+    public void SellLeather()
+    {
+        if (Leather > 0)
+        {
+            Leather--;
+            Gold = Gold + 10;
+        }
+    }
+    public void SellSteel()
+    {
+        if (Steel > 0)
+        {
+            Steel--;
+            Gold = Gold + 10;
+        }
+    }
 }
