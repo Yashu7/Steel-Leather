@@ -8,47 +8,63 @@ public class PartBehaviour : MonoBehaviour
     public int SteelCost;
     public int maxRange = 5;
     public int minRange = 1;
-    public GameObject[] jobs;
-    public GameObject counterInstance;
-    public GameObject counter;
+    [SerializeField]
+    private bool isFixed;
+    private SlotBehaviour parentSlot;
 
-    private int jobIndex;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         LeatherCost = Random.Range(minRange, maxRange);
         SteelCost = Random.Range(minRange, maxRange);
-
-        counterInstance = Instantiate(counter, transform.position, Quaternion.identity);
-        counterInstance.GetComponent<CounterBehaviour>().AttachJob(gameObject);
     }
 
-    public void SetIndex(int index) {
-            jobIndex = index;
+    public void SetParrentSlot(SlotBehaviour slot) {
+        parentSlot = slot;
+    }
+
+    public void Fix() 
+    {
+        Debug.Log("Part fixed");
+        isFixed = true;
+        gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+    }
+
+    public void Break() {
+        isFixed = false;
+    }
+
+    public bool IsFixed() 
+    {
+        return isFixed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(jobIndex > 0) {
-            counterInstance.GetComponent<CounterBehaviour>().SetIndex(jobIndex);
+        if(!isFixed) {
+            
+        gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+        } else {
+            gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
         }
     }
     void OnMouseDown()
     {
+        //todo refactor
         Debug.Log("Leather Cost:" + LeatherCost + " SteelCost: " + SteelCost);
-        jobs = GameObject.FindGameObjectsWithTag("Clicked");
-        foreach(GameObject job in jobs)
+        GameObject[] clickedParts = GameObject.FindGameObjectsWithTag("Clicked");
+        foreach(GameObject clicked in clickedParts)
         {
-            job.tag = "Job";
+            //removes clicked tag - unclicks them
+            clicked.tag = "Job";
         }
+        //set as currently being fixed
         gameObject.tag = "Clicked";
-        
-        
-
-
     }
+    
     public int ReturnLeather()
     {
         return LeatherCost;
