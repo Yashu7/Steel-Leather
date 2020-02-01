@@ -29,7 +29,7 @@ public class PartBehaviour : MonoBehaviour
     {
         Debug.Log("Part fixed");
         isFixed = true;
-        gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+        //gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
     }
 
     public void Break() {
@@ -48,7 +48,7 @@ public class PartBehaviour : MonoBehaviour
             
         gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
         } else {
-            gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+           // gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
         }
     }
     void OnMouseDown()
@@ -63,9 +63,19 @@ public class PartBehaviour : MonoBehaviour
         }
         //set as currently being fixed
         gameObject.tag = "Clicked";
+        StartCoroutine(ClickElement());
+        
+
     }
-    
-    public int ReturnLeather()
+    IEnumerator ClickElement()
+    {
+        gameObject.transform.localScale = new Vector3(0.85F, 0.85F, 1);
+        yield return new WaitForSeconds(0.35F);
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+    }
+
+        public int ReturnLeather()
     {
         return LeatherCost;
     }

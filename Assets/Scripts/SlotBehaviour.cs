@@ -11,7 +11,7 @@ public class SlotBehaviour : MonoBehaviour
     public GameObject counter; 
     public GameObject resultDisplay;
     public int partsCounter = 3;
-    const float partOffset = 0.6f;
+    const float partOffset = 1f;
     private int toFix = 0;
     public Sprite s;
 
@@ -29,15 +29,15 @@ public class SlotBehaviour : MonoBehaviour
         //Helmet
         AddPart(parentX, parentY, true);
         //Left Hand
-        AddPart(parentX-partOffset, parentY-partOffset);
+        AddPart(parentX-partOffset-0.1F, parentY-partOffset-0.25F);
         //Right Hand
-        AddPart(parentX+partOffset, parentY-partOffset, true);
+        AddPart(parentX+partOffset+0.1F, parentY-partOffset - 0.25F, true);
         //Breast Plate
-        AddPart(parentX, parentY-(partOffset*2));
+        AddPart(parentX, parentY-(partOffset + 0.5F));
         //Left Leg
-        AddPart(parentX-partOffset, parentY-(partOffset*3));
+        AddPart(parentX-partOffset+0.5F, parentY-(partOffset*2.8F));
         //Right Leg
-        AddPart(parentX+partOffset, parentY-(partOffset*3));
+        AddPart(parentX+partOffset-0.5F, parentY-(partOffset*2.8F));
 
 
         counter.GetComponent<CounterBehaviour>().Restart();
