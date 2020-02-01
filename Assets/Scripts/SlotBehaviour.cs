@@ -7,6 +7,7 @@ public class SlotBehaviour : MonoBehaviour
 {
     private List<GameObject> parts = new List<GameObject>();
     public List<Sprite> partSprite = new List<Sprite>();
+    public List<Sprite> damagedPartSprite = new List<Sprite>();
     public GameObject partPrefab;
     public GameObject counter; 
     public GameObject resultDisplay;
@@ -15,7 +16,7 @@ public class SlotBehaviour : MonoBehaviour
     private int toFix = 0;
     public Sprite s;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         
@@ -53,14 +54,17 @@ public class SlotBehaviour : MonoBehaviour
                 0
                 )
                 , Quaternion.identity);
-        s =  partSprite[parts.Count];
+       
+            s = partSprite[parts.Count];
+       
         part.GetComponent<SpriteRenderer>().sprite = s;
         parts.Add(part);
         
         part.GetComponent<PartBehaviour>().SetParrentSlot(this);
             if(!isBroken) {
                 part.GetComponent<PartBehaviour>().Fix();
-            } else {
+            part.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.5F);
+        } else {
                 part.GetComponent<PartBehaviour>().Break();
             }
     }

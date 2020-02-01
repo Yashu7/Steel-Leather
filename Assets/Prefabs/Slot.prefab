@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f20bf3aad8ec62447ad4c60b3ec6145e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -94,6 +94,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb09272749f4a4b0db03d9307d06968a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partSprite: []
+  damagedPartSprite: []
   partPrefab: {fileID: 8423518746985819946, guid: f027aef45a6ee494b9cc0e798961b76e,
     type: 3}
   counter: {fileID: 0}
+  resultDisplay: {fileID: 0}
+  partsCounter: 3
+  s: {fileID: 0}
