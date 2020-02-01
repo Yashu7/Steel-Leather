@@ -10,6 +10,9 @@ public class CounterBehaviour : MonoBehaviour
     public int maxStartingTimeInSec = 15;
     public GameObject slot;
 
+    public AudioClip outOfTimeSound;
+    private AudioSource soundSource;
+
     public int penaltyForUnfinishedJob = 100;
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,10 @@ public class CounterBehaviour : MonoBehaviour
          GameObject gg = GameObject.Find("GameGenerator");
             gg.GetComponent<PlayerInventory>().DeduceGold(penaltyForUnfinishedJob);
             slot.GetComponent<SlotBehaviour>().Fail();
+
+        soundSource = GetComponent<AudioSource>();
+        soundSource.PlayOneShot(outOfTimeSound, 0.7F);
+
          return;
      }
      currentTimeInSec--;
