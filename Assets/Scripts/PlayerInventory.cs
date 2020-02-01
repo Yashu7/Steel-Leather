@@ -72,4 +72,15 @@ public class PlayerInventory : MonoBehaviour
     {
         return Gold;
     }
+    public bool CanIForge(int LeatherCost,int SteelCost)
+    {
+        if(LeatherCost > Leather || SteelCost > Steel)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }
