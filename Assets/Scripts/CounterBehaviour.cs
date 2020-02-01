@@ -11,6 +11,8 @@ public class CounterBehaviour : MonoBehaviour
     public GameObject displayCounter;
     public GameObject job;
 
+    public int penaltyForUnfinishedJob = 100;
+
     private int jobIndex;
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,10 @@ public class CounterBehaviour : MonoBehaviour
          CancelInvoke();
          Debug.Log("Dropping part");
          Destroy(job);
+         Debug.Log("Removing gold");
+         GameObject gg = GameObject.Find("GameGenerator");
+         gg.GetComponent<PlayerInventory>().DeduceGold(penaltyForUnfinishedJob);
+         Destroy(gameObject);
          return;
      }
      currentTimeInSec--;
