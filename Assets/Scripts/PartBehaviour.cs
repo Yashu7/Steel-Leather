@@ -29,7 +29,7 @@ public class PartBehaviour : MonoBehaviour
     {
         Debug.Log("Part fixed");
         isFixed = true;
-        //gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+        gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
     }
 
     public void Break() {
