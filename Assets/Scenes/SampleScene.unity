@@ -376,7 +376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -397, y: -327}
+  m_AnchoredPosition: {x: -363, y: -271}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &154577358
@@ -1520,6 +1520,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
+      propertyPath: damagedPartSprite.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
       propertyPath: counter
       value: 
       objectReference: {fileID: 2093731462}
@@ -1569,6 +1574,42 @@ PrefabInstance:
       propertyPath: partSprite.Array.data[5]
       value: 
       objectReference: {fileID: 3603766754242508233, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: -186044419416348259, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 4502303478271469163, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: -6054550472042696066, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[3]
+      value: 
+      objectReference: {fileID: 7359757030222510994, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[4]
+      value: 
+      objectReference: {fileID: -1197216270765900221, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[5]
+      value: 
+      objectReference: {fileID: 4720304371157813143, guid: c1a04649681a0374eb1de98045c7fb46,
         type: 3}
     - target: {fileID: 3413633684407464936, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
@@ -1739,6 +1780,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
+      propertyPath: damagedPartSprite.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
       propertyPath: counter
       value: 
       objectReference: {fileID: 579938139}
@@ -1788,6 +1834,42 @@ PrefabInstance:
       propertyPath: partSprite.Array.data[5]
       value: 
       objectReference: {fileID: 3603766754242508233, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: -186044419416348259, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[3]
+      value: 
+      objectReference: {fileID: 7359757030222510994, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 4502303478271469163, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: -6054550472042696066, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[4]
+      value: 
+      objectReference: {fileID: -1197216270765900221, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[5]
+      value: 
+      objectReference: {fileID: 4720304371157813143, guid: c1a04649681a0374eb1de98045c7fb46,
         type: 3}
     - target: {fileID: 3413633684407464936, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
@@ -2231,7 +2313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -397, y: -285}
+  m_AnchoredPosition: {x: -368, y: -192}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546291972
@@ -3252,6 +3334,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
+      propertyPath: damagedPartSprite.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -3306,6 +3393,42 @@ PrefabInstance:
       propertyPath: partSprite.Array.data[5]
       value: 
       objectReference: {fileID: 3603766754242508233, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: -186044419416348259, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 4502303478271469163, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: -6054550472042696066, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[3]
+      value: 
+      objectReference: {fileID: 7359757030222510994, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[4]
+      value: 
+      objectReference: {fileID: -1197216270765900221, guid: c1a04649681a0374eb1de98045c7fb46,
+        type: 3}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: damagedPartSprite.Array.data[5]
+      value: 
+      objectReference: {fileID: 4720304371157813143, guid: c1a04649681a0374eb1de98045c7fb46,
         type: 3}
     - target: {fileID: 3413633684407464936, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}

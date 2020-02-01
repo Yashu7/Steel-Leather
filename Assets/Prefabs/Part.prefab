@@ -99,6 +99,7 @@ MonoBehaviour:
   SteelCost: 0
   maxRange: 5
   minRange: 1
+  isFixed: 0
 --- !u!61 &2515474139833002266
 BoxCollider2D:
   m_ObjectHideFlags: 0

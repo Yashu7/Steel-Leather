@@ -25,15 +25,23 @@ public class PartBehaviour : MonoBehaviour
         parentSlot = slot;
     }
 
-    public void Fix() 
+    public void Fix()
     {
+
         Debug.Log("Part fixed");
         isFixed = true;
-        gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+        //gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+
+        //gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.5F);
     }
 
     public void Break() {
         isFixed = false;
+    }
+
+    public void Good()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.5F);
     }
 
     public bool IsFixed() 
@@ -47,8 +55,10 @@ public class PartBehaviour : MonoBehaviour
         if(!isFixed) {
             
         gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
-        } else {
-           // gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+        } 
+        else
+        {
+            gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
         }
     }
     void OnMouseDown()
