@@ -9,7 +9,7 @@ public class ScoreBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -25,5 +25,9 @@ public class ScoreBehaviour : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+    void Awake()
+    {
+        
     }
 }
