@@ -44,6 +44,12 @@ public class PlayerInventory : MonoBehaviour
 
         goldCount = GameObject.Find("MyGold");
         goldCount.GetComponent<Text>().text = Gold.ToString();
+
+        if(Input.GetKey(KeyCode.S))
+             {
+                 Debug.Log("S pressed");
+                 Application.Quit();
+             }
     }
    
     public int DeduceLeatherCost(int cost)
@@ -101,12 +107,16 @@ public class PlayerInventory : MonoBehaviour
     }
     public void BuyLeather()
     {
-
+        
         Leather++;
     }
     public void BuySteel()
     {
-        Steel++;
+        if (HowMuchGold() >= 10)
+        {
+            DeduceGold(10);
+            Steel++;
+        }
     }
     public int HowMuchGold()
     {

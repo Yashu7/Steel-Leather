@@ -10,16 +10,15 @@ public class RestartGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Started");
         restart = gameObject.GetComponent<Button>();
         restart.onClick.AddListener(ButtonClicked);
-
-        
     }
 
     void ButtonClicked() 
     {
         Debug.Log("Restart game");
-            SceneManager.LoadScene (sceneName:"SampleScene");
+        SceneManager.LoadScene (sceneName:"SampleScene");
     }
 
     // Update is called once per frame
