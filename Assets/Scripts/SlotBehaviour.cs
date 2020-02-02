@@ -93,7 +93,7 @@ public class SlotBehaviour : MonoBehaviour
     {
         finished = true;
         Debug.Log("Succeess");
-        resultDisplay.GetComponent<Text>().text = "Job Done!";
+       
         GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().BonusMultiplayer(true);
         
         int score = GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().GetScore();
@@ -116,6 +116,12 @@ public class SlotBehaviour : MonoBehaviour
         GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().JobComplete();
         Invoke("Clear",0.5f);
     }
+
+    void DisplayDone()
+    {
+        resultDisplay.GetComponent<Text>().text = "Done!";
+    }
+
     public void ShakeCamera()
     {
         StartCoroutine(ShakeDelay());
@@ -154,6 +160,11 @@ public class SlotBehaviour : MonoBehaviour
             Destroy(part);
         }
         parts.Clear();
+
+        if(finished) {
+            DisplayDone();
+        }
+        
         Invoke("Repopulate", 1);
     }
 
