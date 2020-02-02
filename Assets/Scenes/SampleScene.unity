@@ -2471,17 +2471,17 @@ PrefabInstance:
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: GoldRewardLevel1
-      value: 80
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: GoldRewardLevel2
-      value: 120
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: GoldRewardLevel3
-      value: 175
+      value: 297
       objectReference: {fileID: 0}
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
@@ -2827,22 +2827,22 @@ PrefabInstance:
     - target: {fileID: 2824012930421494207, guid: 568d3f77d09fb453faa2115c76b0780a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 387.1
+      value: -485.1
       objectReference: {fileID: 0}
     - target: {fileID: 2824012930421494207, guid: 568d3f77d09fb453faa2115c76b0780a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 213
+      value: 258
       objectReference: {fileID: 0}
     - target: {fileID: 2824012930421494207, guid: 568d3f77d09fb453faa2115c76b0780a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -1.4
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2824012930421494207, guid: 568d3f77d09fb453faa2115c76b0780a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 7.4
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2824012930421494207, guid: 568d3f77d09fb453faa2115c76b0780a,
         type: 3}
@@ -2912,7 +2912,32 @@ PrefabInstance:
     - target: {fileID: 2824012930458211974, guid: 568d3f77d09fb453faa2115c76b0780a,
         type: 3}
       propertyPath: m_Text
-      value: Quit
+      value: X
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824012930458211974, guid: 568d3f77d09fb453faa2115c76b0780a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824012930458211974, guid: 568d3f77d09fb453faa2115c76b0780a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.28331828
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824012930458211974, guid: 568d3f77d09fb453faa2115c76b0780a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.099012084
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824012930458211974, guid: 568d3f77d09fb453faa2115c76b0780a,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824012930458211974, guid: 568d3f77d09fb453faa2115c76b0780a,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 42
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 568d3f77d09fb453faa2115c76b0780a, type: 3}
@@ -3029,18 +3054,23 @@ PrefabInstance:
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: GoldRewardLevel1
-      value: 80
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: GoldRewardLevel2
-      value: 120
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: GoldRewardLevel3
+      value: 297
+      objectReference: {fileID: 0}
     - target: {fileID: 3413633684407464936, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5071,12 +5101,17 @@ PrefabInstance:
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: GoldRewardLevel1
-      value: 80
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: GoldRewardLevel2
-      value: 120
+      value: 179
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: GoldRewardLevel3
+      value: 297
       objectReference: {fileID: 0}
     - target: {fileID: 3413633684407464936, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}

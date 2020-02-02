@@ -54,7 +54,22 @@ public class CounterBehaviour : MonoBehaviour
          Debug.Log("Removing gold");
          GameObject gg = GameObject.Find("GameGenerator");
            
-            gg.GetComponent<PlayerInventory>().DeduceGold(penaltyForUnfinishedJob);
+           int score = GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().GetScore();
+           int penalty = penaltyForUnfinishedJob;
+           if (score < 1000)
+        {
+            penalty = 50;
+        }
+        if (score > 1000 && score < 2000)
+        {
+            penalty = 75;
+        }
+        if (score > 2000)
+        {
+            penalty = 100;
+        }
+
+            gg.GetComponent<PlayerInventory>().DeduceGold(penalty);
             slot.GetComponent<SlotBehaviour>().Fail();
 
         soundSource = GetComponent<AudioSource>();
