@@ -16,8 +16,8 @@ public class SlotBehaviour : MonoBehaviour
     private int toFix = 0;
     public Sprite s;
 
-    public int GoldRewardLevel1 = 100;
-    public int GoldRewardLevel2 = 125;
+    public int GoldRewardLevel1 = 80;
+    public int GoldRewardLevel2 = 120;
     public int GoldRewardLevel3 = 175;
     private bool broken;
     private bool finished;

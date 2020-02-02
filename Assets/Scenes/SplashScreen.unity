@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.51660156, y: 0.2916563}
   m_AnchorMax: {x: 0.51660156, y: 0.2916563}
-  m_AnchoredPosition: {x: 9.1, y: -0.1000061}
+  m_AnchoredPosition: {x: 17, y: -126}
   m_SizeDelta: {x: 243.3, y: 116.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &288118334
@@ -337,7 +337,14 @@ MonoBehaviour:
     Fix armor on time to earn money
 
     Fail to do
-    so and You will loose mony'
+    so and You will loose mony
+
+    Q - buy leather
+
+    W - buy steel
+
+    E - forge
+    item'
 --- !u!222 &546900146
 CanvasRenderer:
   m_ObjectHideFlags: 0

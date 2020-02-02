@@ -15,7 +15,7 @@ public class CounterBehaviour : MonoBehaviour
     public AudioClip outOfTimeSound;
     private AudioSource soundSource;
 
-    public int penaltyForUnfinishedJob = 25;
+    public int penaltyForUnfinishedJob = 50;
     public bool canICount = true;
     
 
