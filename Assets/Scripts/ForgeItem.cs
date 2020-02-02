@@ -33,7 +33,7 @@ public class ForgeItem : MonoBehaviour
     }
     void ButtonClicked()
     {
-       
+
         if (GameObject.FindWithTag("Clicked"))
         {
 
@@ -53,17 +53,49 @@ public class ForgeItem : MonoBehaviour
             if (gameGenerator.GetComponent<PlayerInventory>().CanIForge(currentPart.GetComponent<PartBehaviour>().ReturnLeather(), currentPart.GetComponent<PartBehaviour>().ReturnSteel()))
             {
                 gameGenerator.GetComponent<PlayerInventory>().DeduceLeatherCost(currentPart.GetComponent<PartBehaviour>().ReturnLeather());
+                
                 gameGenerator.GetComponent<PlayerInventory>().DeduceSteelCost(currentPart.GetComponent<PartBehaviour>().ReturnSteel());
-
+                
                 //fix part - notify slot
                 currentPart.GetComponent<PartBehaviour>().Fix();
 
                 PlayHit();
                 currentPart.tag = "Job";
             }
+
+            if(!gameGenerator.GetComponent<PlayerInventory>().CanIForge(currentPart.GetComponent<PartBehaviour>().ReturnLeather(),0))
+                {
+                StartCoroutine(notEnoughLeather());
+            }
+            if (!gameGenerator.GetComponent<PlayerInventory>().CanIForge(0, currentPart.GetComponent<PartBehaviour>().ReturnSteel()))
+            {
+                StartCoroutine(notEnoughSteel());
+            }
+
+        }
+    
+
+     public IEnumerator notEnoughLeather()
+        {
+        GameObject.Find("AmountOfLeather").GetComponent<Text>().color = Color.red;
+        yield return new WaitForSeconds(0.5F);
+        GameObject.Find("AmountOfLeather").GetComponent<Text>().color = Color.green;
+    }
+    public IEnumerator notEnoughSteel()
+    {
+        GameObject.Find("AmountOfSteel").GetComponent<Text>().color = Color.red;
+        yield return new WaitForSeconds(0.5F);
+        GameObject.Find("AmountOfSteel").GetComponent<Text>().color = Color.green;
     }
 
-     private void PlayHit()
+
+
+
+
+
+
+
+    private void PlayHit()
     {
         Debug.Log("playing sound");
         anvilHitSoundSource = GetComponent<AudioSource>();
@@ -71,3 +103,4 @@ public class ForgeItem : MonoBehaviour
     }
 
 }
+
