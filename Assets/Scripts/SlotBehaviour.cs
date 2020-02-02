@@ -112,7 +112,7 @@ public class SlotBehaviour : MonoBehaviour
         }
 
         ShakeCamera();
-        GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().AddGold(GoldReward);
+        GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().AddGold(goldReward);
         GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().JobComplete();
         Invoke("Clear",0.5f);
     }
