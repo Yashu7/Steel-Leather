@@ -88,6 +88,8 @@ public class SlotBehaviour : MonoBehaviour
         finished = true;
         Debug.Log("Succeess");
         resultDisplay.GetComponent<Text>().text = "Job Done!";
+        GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().BonusMultiplayer(true);
+        
         GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().AddGold(GoldReward);
         GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().JobComplete();
         Invoke("Clear",0.5f);
@@ -96,6 +98,7 @@ public class SlotBehaviour : MonoBehaviour
     public void Fail()
     {
         resultDisplay.GetComponent<Text>().text = "Fail!";
+        GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().BonusMultiplayer(false) ;
         Clear();
     }
 
@@ -108,7 +111,7 @@ public class SlotBehaviour : MonoBehaviour
             Destroy(part);
         }
         parts.Clear();
-        Invoke("Repopulate", 1.0f);
+        Invoke("Repopulate", 1);
     }
 
     // Update is called once per frame
