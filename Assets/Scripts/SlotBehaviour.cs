@@ -16,7 +16,9 @@ public class SlotBehaviour : MonoBehaviour
     private int toFix = 0;
     public Sprite s;
 
-    public int GoldReward = 25;
+    public int GoldRewardLevel1 = 100;
+    public int GoldRewardLevel2 = 125;
+    public int GoldRewardLevel3 = 175;
     private bool broken;
     private bool finished;
     
@@ -90,7 +92,22 @@ public class SlotBehaviour : MonoBehaviour
         resultDisplay.GetComponent<Text>().text = "Job Done!";
         GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().BonusMultiplayer(true);
         
-        GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().AddGold(GoldReward);
+        int score = GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().GetScore();
+        int goldReward = 100;
+        if (score < 1000)
+        {
+            goldReward = GoldRewardLevel1;
+        }
+        if (score > 1000 && score < 2000)
+        {
+            goldReward = GoldRewardLevel2;
+        }
+        if (score > 2000)
+        {
+            goldReward = GoldRewardLevel3;
+        }
+
+        GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().AddGold(goldReward);
         GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().JobComplete();
         Invoke("Clear",0.5f);
     }
