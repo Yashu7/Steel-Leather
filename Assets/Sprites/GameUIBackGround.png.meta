@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 53
+  spritePixelsToUnits: 55
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -135,6 +135,27 @@ TextureImporter:
       bones: []
       spriteID: ec572740dc1a3fe10800000000000000
       internalID: 2230304142393505230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUIBackGround_1
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 512
+        width: 248
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb373b9c28d74660800000000000000
+      internalID: 7370097001309354943
       vertices: []
       indices: 
       edges: []
@@ -219,27 +240,6 @@ TextureImporter:
       bones: []
       spriteID: b7b01c4e1dbe6f840800000000000000
       internalID: 5257648901720181627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GameUIBackGround_6
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 0
-        width: 248
-        height: 226
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 659cde43ed1cf48b0800000000000000
-      internalID: -5165697087455770282
       vertices: []
       indices: 
       edges: []
