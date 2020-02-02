@@ -3647,6 +3647,7 @@ MonoBehaviour:
   Gold: 0
   StartingGold: 0
   goldCount: {fileID: 0}
+  bonus: 0
   insufficientResouceSound: {fileID: 8300000, guid: 7e58c1718e011c847949792efd486a17,
     type: 3}
   addGoldSound: {fileID: 8300000, guid: dca3084cb66e8824bab682c584bec504, type: 3}
@@ -4754,6 +4755,11 @@ PrefabInstance:
       propertyPath: GoldReward
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 3413633684407464936, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: m_LocalPosition.x
