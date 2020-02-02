@@ -14,6 +14,7 @@ public class PlayerInventory : MonoBehaviour
     public int Gold;
     public int StartingGold;
     public GameObject goldCount;
+    public int bonus = 0;
 
     public AudioClip insufficientResouceSound;
     public AudioClip addGoldSound;
@@ -71,9 +72,20 @@ public class PlayerInventory : MonoBehaviour
         }
         return Steel = Steel - cost;
     }
+    public void BonusMultiplayer(bool toAdd)
+    {
+        if (toAdd)
+        {
+            bonus++;
+        }
+        else
+        {
+            bonus = 0;
+        }
+    }
     public void AddGold(int prize)
     {
-        Gold = Gold + prize;
+        Gold = Gold + (prize * bonus);
 
         soundSource = GetComponent<AudioSource>();
         soundSource.PlayOneShot(addGoldSound, 0.7F);

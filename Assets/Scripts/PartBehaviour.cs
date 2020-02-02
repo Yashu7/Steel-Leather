@@ -40,7 +40,7 @@ public class PartBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        difficultyLevel();
+        difficultyLevel();  
         LeatherCost = Random.Range(minRange, maxRange);
         SteelCost = Random.Range(minRange, maxRange);
     }
