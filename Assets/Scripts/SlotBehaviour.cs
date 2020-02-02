@@ -144,9 +144,13 @@ public class SlotBehaviour : MonoBehaviour
     public void Clear()
     {
         Debug.Log("Clearing parts");
-        
         foreach (GameObject part in parts)
         {
+            part.transform.Translate(Vector3.forward * Time.deltaTime);
+        }
+            foreach (GameObject part in parts)
+        {
+            
             Destroy(part);
         }
         parts.Clear();
@@ -179,6 +183,7 @@ public class SlotBehaviour : MonoBehaviour
             Debug.Log("Job done!");
             Success();
         }
+       
     }
     
 }
