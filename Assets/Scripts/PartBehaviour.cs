@@ -6,14 +6,14 @@ public class PartBehaviour : MonoBehaviour
 {
     public int LeatherCost;
     public int SteelCost;
-    public int maxRange;
-    public int minRange;
+    public int maxRange = 1;
+    public int minRange = 2;
     [SerializeField]
     private bool isFixed;
     private SlotBehaviour parentSlot;
-    public enum difficulty  {easy,medium,hard };
+    
     public int score;
-    public difficulty dif;
+    
 
     
     public void difficultyLevel()
@@ -21,35 +21,26 @@ public class PartBehaviour : MonoBehaviour
        score = GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().GetScore();
         if (score < 1000)
         {
-            dif = difficulty.easy;
-        }
-        if (score > 1000 & score < 2000)
-        {
-            dif = difficulty.medium;
-        }
-        if (score > 2000)
-        {
-            dif = difficulty.hard;
-        }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        if(dif == difficulty.easy)
-        {
-            maxRange = 2;
+            maxRange = 3;
             minRange = 1;
         }
-        if (dif == difficulty.medium)
+        if (score > 1000 && score < 2000)
         {
             maxRange = 5;
             minRange = 2;
         }
-        if(dif == difficulty.hard)
+        if (score > 2000)
         {
             maxRange = 7;
             minRange = 4;
         }
+       
+        
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        difficultyLevel();
         LeatherCost = Random.Range(minRange, maxRange);
         SteelCost = Random.Range(minRange, maxRange);
     }
@@ -93,8 +84,12 @@ public class PartBehaviour : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
         }
-        difficultyLevel();
         
+        if (gameObject.tag == "Clicked")
+        {
+            gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
+        }
+        difficultyLevel();
     }
     void OnMouseDown()
     {
@@ -108,6 +103,7 @@ public class PartBehaviour : MonoBehaviour
         }
         //set as currently being fixed
         gameObject.tag = "Clicked";
+        
         StartCoroutine(ClickElement());
         
 
@@ -117,6 +113,7 @@ public class PartBehaviour : MonoBehaviour
         gameObject.transform.localScale = new Vector3(0.85F, 0.85F, 1);
         yield return new WaitForSeconds(0.35F);
         gameObject.transform.localScale = new Vector3(1, 1, 1);
+        
 
     }
 

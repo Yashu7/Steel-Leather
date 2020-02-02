@@ -108,7 +108,7 @@ public class SlotBehaviour : MonoBehaviour
             Destroy(part);
         }
         parts.Clear();
-        Invoke("Repopulate", 1.0f);
+        Invoke("Repopulate", 1);
     }
 
     // Update is called once per frame

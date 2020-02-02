@@ -7,7 +7,7 @@ public class CounterBehaviour : MonoBehaviour
 {
     public int currentTimeInSec;
     public int minStartingTimeInSec = 5;
-    public int maxStartingTimeInSec = 15;
+    public int maxStartingTimeInSec = 100;
     public GameObject slot;
     public Image bar;
     
@@ -16,15 +16,20 @@ public class CounterBehaviour : MonoBehaviour
     private AudioSource soundSource;
 
     public int penaltyForUnfinishedJob = 25;
+    public bool canICount = true;
     
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1.0f;
+        
     }
-
+    public void CanIInvoke()
+    {
+        InvokeRepeating("OutputTime", 1, 1);
+        canICount = false;
+    }
     public void Restart() 
     {
         Debug.Log("Creating counter");
@@ -32,19 +37,19 @@ public class CounterBehaviour : MonoBehaviour
 
         gameObject.GetComponent<Text>().color = Color.white;
         gameObject.GetComponent<Text>().enabled = true;
-        InvokeRepeating("OutputTime", 1, 1);
-       // InvokeRepeating("FlashWarning", 1, 1);
-       
-    }
-    public IEnumerator MyClock()
-    {
-        currentTimeInSec--;
-        yield return new WaitForSeconds(1);
+       //Stops Invoke from stacking up 
+        if (canICount)
+        {
+            CanIInvoke();
+        }
+        
+
     }
 
+   
     void OutputTime() {
      if(currentTimeInSec <= 0) {
-         CancelInvoke();
+         //CancelInvoke();
          Debug.Log("Dropping job");
          Debug.Log("Removing gold");
          GameObject gg = GameObject.Find("GameGenerator");
@@ -58,7 +63,12 @@ public class CounterBehaviour : MonoBehaviour
          return;
      }
 
-        StartCoroutine(MyClock());
+
+         currentTimeInSec = System.Convert.ToInt32(currentTimeInSec - ((Time.time + 1) - Time.time));
+        
+       
+
+
     }
 
     void FlashWarning()
@@ -78,6 +88,7 @@ public class CounterBehaviour : MonoBehaviour
     void Update()
     {
         Text textComponent = gameObject.GetComponent<Text>();
-        textComponent.text = currentTimeInSec.ToString(); 
+        textComponent.text = currentTimeInSec.ToString();
+        
     }
 }

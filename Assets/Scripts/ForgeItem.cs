@@ -46,6 +46,7 @@ public class ForgeItem : MonoBehaviour
                 currentPart.GetComponent<PartBehaviour>().Fix();
 
                 PlayHit();
+                currentPart.tag = "Job";
             }
             
         }
