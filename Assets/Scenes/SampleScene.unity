@@ -1223,7 +1223,7 @@ MonoBehaviour:
   slot: {fileID: 7213091847549203642}
   bar: {fileID: 0}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
-  penaltyForUnfinishedJob: 25
+  penaltyForUnfinishedJob: 50
   canICount: 1
 --- !u!82 &531283398
 AudioSource:
@@ -1421,7 +1421,7 @@ MonoBehaviour:
   slot: {fileID: 1348462006}
   bar: {fileID: 0}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
-  penaltyForUnfinishedJob: 25
+  penaltyForUnfinishedJob: 50
   canICount: 1
 --- !u!82 &579938144
 AudioSource:
@@ -2275,6 +2275,21 @@ PrefabInstance:
       propertyPath: GoldReward
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: GoldRewardLevel1
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: GoldRewardLevel2
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: GoldRewardLevel3
+      value: 175
+      objectReference: {fileID: 0}
     - target: {fileID: 3413633684407464936, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2572,6 +2587,16 @@ PrefabInstance:
         type: 3}
       propertyPath: GoldReward
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: GoldRewardLevel1
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: GoldRewardLevel2
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 3413633684407464936, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
@@ -4428,7 +4453,7 @@ MonoBehaviour:
   slot: {fileID: 1230684768}
   bar: {fileID: 0}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
-  penaltyForUnfinishedJob: 25
+  penaltyForUnfinishedJob: 50
   canICount: 1
 --- !u!82 &2093731467
 AudioSource:
@@ -4760,6 +4785,16 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: GoldRewardLevel1
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785079230922485490, guid: e7964644734644f408cc17b6a3bc8904,
+        type: 3}
+      propertyPath: GoldRewardLevel2
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 3413633684407464936, guid: e7964644734644f408cc17b6a3bc8904,
         type: 3}
       propertyPath: m_LocalPosition.x
