@@ -22,11 +22,9 @@ public class BuyMoreSteel : MonoBehaviour
     }
     void ButtonClicked()
     {
-        if (gameGenerator.GetComponent<PlayerInventory>().HowMuchGold() >= 10)
-        {
-            gameGenerator.GetComponent<PlayerInventory>().DeduceGold(10);
-            gameGenerator.GetComponent<PlayerInventory>().BuySteel();
-        }
+       
+        gameGenerator.GetComponent<PlayerInventory>().BuySteel();
+    
     }
 }
 
