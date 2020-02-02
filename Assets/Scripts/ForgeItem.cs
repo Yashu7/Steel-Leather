@@ -73,7 +73,7 @@ public class ForgeItem : MonoBehaviour
             }
 
         }
-    }
+    
 
      public IEnumerator notEnoughLeather()
         {
