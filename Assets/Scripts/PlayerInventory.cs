@@ -86,14 +86,14 @@ public class PlayerInventory : MonoBehaviour
     }
     public void BonusMultiplayer(bool toAdd)
     {
-        if (toAdd)
-        {
-            bonus++;
-        }
-        else
-        {
-            bonus = 0;
-        }
+        // if (toAdd)
+        // {
+        //     bonus++;
+        // }
+        // else
+        // {
+        //     bonus = 0;
+        // }
     }
     public void AddGold(int prize)
     {
