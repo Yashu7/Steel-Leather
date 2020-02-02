@@ -45,14 +45,14 @@ public class PlayerInventory : MonoBehaviour
         goldCount = GameObject.Find("MyGold");
         goldCount.GetComponent<Text>().text = Gold.ToString();
 
-        if(Input.GetKeyDown(KeyCode.S))
+        if(Input.GetKeyDown(KeyCode.W))
         {
-                 Debug.Log("S pressed");
+                 Debug.Log("W pressed");
                 BuySteel();
         }
-        if(Input.GetKeyDown(KeyCode.L))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
-                 Debug.Log("L pressed");
+                 Debug.Log("Q pressed");
                 BuyLeather();
         }
         

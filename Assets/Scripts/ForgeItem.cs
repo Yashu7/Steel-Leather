@@ -24,7 +24,12 @@ public class ForgeItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+                 Debug.Log("E pressed");
+                Forge();
+        }
+    
     }
     void ButtonClicked()
     {
@@ -32,7 +37,15 @@ public class ForgeItem : MonoBehaviour
         if (GameObject.FindWithTag("Clicked"))
         {
 
-            anim.SetTrigger("ForgeClicked");
+            Forge();
+            
+        }
+
+    }
+
+    private void Forge() 
+    {
+        anim.SetTrigger("ForgeClicked");
 
             currentPart = GameObject.FindWithTag("Clicked");
 
@@ -48,14 +61,6 @@ public class ForgeItem : MonoBehaviour
                 PlayHit();
                 currentPart.tag = "Job";
             }
-            
-        }
-
-        
-
-
-
-
     }
 
      private void PlayHit()
