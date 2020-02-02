@@ -97,7 +97,7 @@ public class PlayerInventory : MonoBehaviour
     }
     public void AddGold(int prize)
     {
-        Gold = Gold + (prize * bonus);
+        Gold = Gold + (prize * (1 + bonus));
 
         soundSource = GetComponent<AudioSource>();
         soundSource.PlayOneShot(addGoldSound, 0.7F);
