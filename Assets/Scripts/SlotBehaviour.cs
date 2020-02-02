@@ -19,8 +19,12 @@ public class SlotBehaviour : MonoBehaviour
     public int GoldReward = 25;
     private bool broken;
     private bool finished;
-    
 
+    public GameObject camera;
+    public Vector3 startingPos;
+    public float ShakeDuration = 0;
+    public float ShakePower = 0;
+    public bool ShakeBool = false;
 
     void Start()
     { 
@@ -89,10 +93,27 @@ public class SlotBehaviour : MonoBehaviour
         Debug.Log("Succeess");
         resultDisplay.GetComponent<Text>().text = "Job Done!";
         GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().BonusMultiplayer(true);
-        
+        ShakeCamera();
         GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().AddGold(GoldReward);
         GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().JobComplete();
         Invoke("Clear",0.5f);
+    }
+    public void ShakeCamera()
+    {
+        StartCoroutine(ShakeDelay());
+        
+    }
+    public IEnumerator ShakeDelay()
+    {
+        startingPos = camera.transform.localPosition;
+        ShakePower = 0.2F;
+        ShakeDuration = 0.05F;
+
+
+        ShakeBool = true;
+        yield return new WaitForSeconds(0.5F);
+        ShakeBool = false;
+        camera.transform.localPosition = startingPos;
     }
 
     public void Fail()
@@ -117,6 +138,11 @@ public class SlotBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(ShakeBool)
+        {
+            camera.transform.localPosition = startingPos + Random.insideUnitSphere * ShakePower;
+            ShakeDuration -= Time.deltaTime * 1.0f;
+        }
         if (parts.Count < 1 || finished)
         {
             return;
