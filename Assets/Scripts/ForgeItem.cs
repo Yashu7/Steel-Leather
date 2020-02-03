@@ -43,53 +43,66 @@ public class ForgeItem : MonoBehaviour
 
     }
 
-    private void Forge() 
+    private void Forge()
     {
         anim.SetTrigger("ForgeClicked");
 
-            currentPart = GameObject.FindWithTag("Clicked");
+        if (currentPart = GameObject.FindWithTag("Clicked"))
+        {
+
 
             gameGenerator = GameObject.FindWithTag("Player");
-            if (gameGenerator.GetComponent<PlayerInventory>().CanIForge(currentPart.GetComponent<PartBehaviour>().ReturnLeather(), currentPart.GetComponent<PartBehaviour>().ReturnSteel()))
+            if (!currentPart.GetComponent<PartBehaviour>().isFixed)
             {
-                gameGenerator.GetComponent<PlayerInventory>().DeduceLeatherCost(currentPart.GetComponent<PartBehaviour>().ReturnLeather());
-                
-                gameGenerator.GetComponent<PlayerInventory>().DeduceSteelCost(currentPart.GetComponent<PartBehaviour>().ReturnSteel());
-                
-                //fix part - notify slot
-                currentPart.GetComponent<PartBehaviour>().Fix();
-
-                PlayHit();
-                currentPart.tag = "Job";
-            }
-
-            if(!gameGenerator.GetComponent<PlayerInventory>().CanIForge(currentPart.GetComponent<PartBehaviour>().ReturnLeather(),0))
+                if (gameGenerator.GetComponent<PlayerInventory>().CanIForge(currentPart.GetComponent<PartBehaviour>().ReturnLeather(), currentPart.GetComponent<PartBehaviour>().ReturnSteel()))
                 {
-                StartCoroutine(notEnoughLeather());
+                    gameGenerator.GetComponent<PlayerInventory>().DeduceLeatherCost(currentPart.GetComponent<PartBehaviour>().ReturnLeather());
+
+                    gameGenerator.GetComponent<PlayerInventory>().DeduceSteelCost(currentPart.GetComponent<PartBehaviour>().ReturnSteel());
+
+                    //fix part - notify slot
+                    currentPart.GetComponent<PartBehaviour>().Fix();
+
+                    PlayHit();
+                    currentPart.tag = "Job";
+                }
+
+                if (!gameGenerator.GetComponent<PlayerInventory>().CanIForge(currentPart.GetComponent<PartBehaviour>().ReturnLeather(), 0))
+                {
+                    StartCoroutine(notEnoughLeather());
+                }
+                if (!gameGenerator.GetComponent<PlayerInventory>().CanIForge(0, currentPart.GetComponent<PartBehaviour>().ReturnSteel()))
+                {
+                    StartCoroutine(notEnoughSteel());
+                }
+
             }
-            if (!gameGenerator.GetComponent<PlayerInventory>().CanIForge(0, currentPart.GetComponent<PartBehaviour>().ReturnSteel()))
+
+
+            else
             {
-                StartCoroutine(notEnoughSteel());
+                Debug.Log("Already Fixed");
+                //currentPart.tag = "Job";
             }
-
         }
-    
-
-     public IEnumerator notEnoughLeather()
+    }
+        public IEnumerator notEnoughLeather()
         {
-        GameObject.Find("AmountOfLeather").GetComponent<Text>().color = Color.red;
-        yield return new WaitForSeconds(0.5F);
-        GameObject.Find("AmountOfLeather").GetComponent<Text>().color = Color.green;
-    }
-    public IEnumerator notEnoughSteel()
-    {
-        GameObject.Find("AmountOfSteel").GetComponent<Text>().color = Color.red;
-        yield return new WaitForSeconds(0.5F);
-        GameObject.Find("AmountOfSteel").GetComponent<Text>().color = Color.green;
-    }
+            GameObject.Find("AmountOfLeather").GetComponent<Text>().color = Color.red;
+            yield return new WaitForSeconds(0.5F);
+            GameObject.Find("AmountOfLeather").GetComponent<Text>().color = Color.green;
+        }
+        public IEnumerator notEnoughSteel()
+        {
+            GameObject.Find("AmountOfSteel").GetComponent<Text>().color = Color.red;
+            yield return new WaitForSeconds(0.5F);
+            GameObject.Find("AmountOfSteel").GetComponent<Text>().color = Color.green;
+        }
 
 
 
+
+    
 
 
 

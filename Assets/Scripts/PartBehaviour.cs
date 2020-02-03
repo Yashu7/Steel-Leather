@@ -9,7 +9,7 @@ public class PartBehaviour : MonoBehaviour
     public int maxRange = 1;
     public int minRange = 2;
     [SerializeField]
-    private bool isFixed;
+    public bool isFixed;
     private SlotBehaviour parentSlot;
     
     public int score;
@@ -102,10 +102,14 @@ public class PartBehaviour : MonoBehaviour
             clicked.tag = "Job";
         }
         //set as currently being fixed
-        gameObject.tag = "Clicked";
-        
+        if (!isFixed)
+        {
+
+            gameObject.tag = "Clicked";
+
+           
+        }
         StartCoroutine(ClickElement());
-        
 
     }
     IEnumerator ClickElement()
