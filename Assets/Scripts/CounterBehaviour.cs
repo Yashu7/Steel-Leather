@@ -70,6 +70,7 @@ public class CounterBehaviour : MonoBehaviour
         }
 
             gg.GetComponent<PlayerInventory>().DeduceGold(penalty);
+            GameObject.Find("HowMuchGold").GetComponent<PopUpText>().popUpMessage("-", penalty);
             slot.GetComponent<SlotBehaviour>().Fail();
 
         soundSource = GetComponent<AudioSource>();
