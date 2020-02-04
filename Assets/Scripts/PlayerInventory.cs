@@ -95,12 +95,14 @@ public class PlayerInventory : MonoBehaviour
         //     bonus = 0;
         // }
     }
-    public void AddGold(int prize)
+    public int AddGold(int prize)
     {
-        Gold = Gold + (prize * (1 + bonus));
+        prize = (prize * (1 + bonus));
+        Gold = Gold + prize;
 
         soundSource = GetComponent<AudioSource>();
         soundSource.PlayOneShot(addGoldSound, 0.7F);
+        return prize;
     }
     public void DeduceGold(int prize)
     {

@@ -112,7 +112,8 @@ public class SlotBehaviour : MonoBehaviour
         }
 
         ShakeCamera();
-        GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().AddGold(goldReward);
+        int goldPlus = GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().AddGold(goldReward);
+        GameObject.Find("HowMuchGold").GetComponent<PopUpText>().popUpMessage("+++", goldPlus);
         GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().JobComplete();
         Invoke("Clear",0.5f);
     }
