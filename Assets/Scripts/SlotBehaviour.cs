@@ -28,6 +28,8 @@ public class SlotBehaviour : MonoBehaviour
     public float ShakePower = 0;
     public bool ShakeBool = false;
 
+    public GameObject labelToGenerate;
+
     void Start()
     { 
 
@@ -113,6 +115,7 @@ public class SlotBehaviour : MonoBehaviour
 
         ShakeCamera();
         int goldPlus = GameObject.Find("GameGenerator").GetComponent<PlayerInventory>().AddGold(goldReward);
+        //TODO: Leave it like it is or change to create separate gameobject whenever text shows up.
         GameObject.Find("HowMuchGold").GetComponent<PopUpText>().popUpMessage("+", goldPlus);
         GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().JobComplete();
         Invoke("Clear",0.5f);

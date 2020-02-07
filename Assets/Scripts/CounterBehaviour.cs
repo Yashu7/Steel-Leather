@@ -71,6 +71,8 @@ public class CounterBehaviour : MonoBehaviour
 
             gg.GetComponent<PlayerInventory>().DeduceGold(penalty);
             GameObject.Find("HowMuchGold").GetComponent<PopUpText>().popUpMessage("-", penalty);
+            //Change label's color to red when failed.
+            GameObject.Find("HowMuchGold").GetComponent<Text>().color = new Color32(255, 0, 0, 255);
             slot.GetComponent<SlotBehaviour>().Fail();
 
         soundSource = GetComponent<AudioSource>();
@@ -86,7 +88,7 @@ public class CounterBehaviour : MonoBehaviour
 
 
     }
-
+    //TODO : Is it even being used?
     void FlashWarning()
     {
         if(currentTimeInSec < 1) {
