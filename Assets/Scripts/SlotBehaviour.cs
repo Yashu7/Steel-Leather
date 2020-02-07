@@ -90,7 +90,10 @@ public class SlotBehaviour : MonoBehaviour
             part.GetComponent<PartBehaviour>().Break();
         }
     }
-
+    public bool isFinished()
+    {
+        return finished;
+    }
     public void Success()
     {
         finished = true;

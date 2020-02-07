@@ -52,7 +52,10 @@ public class CounterBehaviour : MonoBehaviour
         
 
     }
-
+    public void GetRidOfTimeBar()
+    {
+        Destroy(TimeBar);
+    }
    
     void OutputTime() {
      if(currentTimeInSec <= 0) {
@@ -60,7 +63,7 @@ public class CounterBehaviour : MonoBehaviour
          Debug.Log("Dropping job");
          Debug.Log("Removing gold");
          GameObject gg = GameObject.Find("GameGenerator");
-            Destroy(TimeBar);
+            GetRidOfTimeBar();
            int score = GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().GetScore();
            int penalty = penaltyForUnfinishedJob;
            if (score < 1000)
@@ -117,6 +120,10 @@ public class CounterBehaviour : MonoBehaviour
     {
         Text textComponent = gameObject.GetComponent<Text>();
         textComponent.text = currentTimeInSec.ToString();
+        if(slot.GetComponent<SlotBehaviour>().isFinished())
+        {
+            GetRidOfTimeBar();
+        }
         
     }
 }
