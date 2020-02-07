@@ -33,15 +33,17 @@ public class PopUpText : MonoBehaviour
         yield return new WaitForSeconds(1);
         gameObject.GetComponent<Text>().text = "";
         gameObject.transform.position = startPosition;
+        gameObject.GetComponent<Text>().color = cr;
     }
     private IEnumerator fadeOut()
     {
         for (float i = 0; i < 0.1F;)
         {
-            gameObject.GetComponent<Text>().color -= new Color32(0, 0, 0, 23);
+            gameObject.GetComponent<Text>().color -= new Color32(0, 0, 0, 5);
             gameObject.transform.position = gameObject.transform.position + new Vector3(0, i, 0);
-            i = i + 0.01F;
+            i = i + 0.002F;
             yield return null;
+
         }
     }
 }
