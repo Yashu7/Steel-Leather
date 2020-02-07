@@ -1225,7 +1225,9 @@ MonoBehaviour:
   minStartingTimeInSec: 30
   maxStartingTimeInSec: 50
   slot: {fileID: 7213091847549203642}
-  bar: {fileID: 0}
+  TimeBarPrefab: {fileID: 206066314309847200, guid: 741e0abfc3091a94bab38bb1e345124a,
+    type: 3}
+  TimeBar: {fileID: 0}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
   penaltyForUnfinishedJob: 50
   canICount: 1
@@ -1423,7 +1425,9 @@ MonoBehaviour:
   minStartingTimeInSec: 30
   maxStartingTimeInSec: 50
   slot: {fileID: 1348462006}
-  bar: {fileID: 0}
+  TimeBarPrefab: {fileID: 206066314309847200, guid: 741e0abfc3091a94bab38bb1e345124a,
+    type: 3}
+  TimeBar: {fileID: 0}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
   penaltyForUnfinishedJob: 50
   canICount: 1
@@ -4915,7 +4919,9 @@ MonoBehaviour:
   minStartingTimeInSec: 30
   maxStartingTimeInSec: 50
   slot: {fileID: 1230684768}
-  bar: {fileID: 0}
+  TimeBarPrefab: {fileID: 206066314309847200, guid: 741e0abfc3091a94bab38bb1e345124a,
+    type: 3}
+  TimeBar: {fileID: 0}
   outOfTimeSound: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
   penaltyForUnfinishedJob: 50
   canICount: 1

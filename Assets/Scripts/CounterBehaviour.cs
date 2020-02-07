@@ -9,8 +9,10 @@ public class CounterBehaviour : MonoBehaviour
     public int minStartingTimeInSec = 5;
     public int maxStartingTimeInSec = 100;
     public GameObject slot;
-    public Image bar;
-    
+    public GameObject TimeBarPrefab;
+    public GameObject TimeBar;
+
+
 
     public AudioClip outOfTimeSound;
     private AudioSource soundSource;
@@ -34,7 +36,12 @@ public class CounterBehaviour : MonoBehaviour
     {
         Debug.Log("Creating counter");
         currentTimeInSec = Random.Range(minStartingTimeInSec, maxStartingTimeInSec);
-
+        TimeBar = Instantiate(TimeBarPrefab, new Vector3(
+            gameObject.transform.position.x,
+            +0.3F,
+            0
+            )
+            , Quaternion.identity);
         gameObject.GetComponent<Text>().color = Color.white;
         gameObject.GetComponent<Text>().enabled = true;
        //Stops Invoke from stacking up 
@@ -53,7 +60,7 @@ public class CounterBehaviour : MonoBehaviour
          Debug.Log("Dropping job");
          Debug.Log("Removing gold");
          GameObject gg = GameObject.Find("GameGenerator");
-           
+            Destroy(TimeBar);
            int score = GameObject.Find("MyScore").GetComponent<ScoreBehaviour>().GetScore();
            int penalty = penaltyForUnfinishedJob;
            if (score < 1000)
@@ -81,8 +88,11 @@ public class CounterBehaviour : MonoBehaviour
          return;
      }
 
-
-         currentTimeInSec = System.Convert.ToInt32(currentTimeInSec - ((Time.time + 1) - Time.time));
+        if (TimeBar.transform.localScale.x > -0.1F)
+        {
+            TimeBar.transform.localScale = new Vector3((currentTimeInSec * 0.1F) - 0.1F, TimeBar.transform.localScale.y, TimeBar.transform.localScale.z);
+        }
+        currentTimeInSec = System.Convert.ToInt32(currentTimeInSec - ((Time.time + 1) - Time.time));
         
        
 
