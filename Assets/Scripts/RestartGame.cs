@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class RestartGame : MonoBehaviour
 {
+    public bool isAndroid;
     public Button restart;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,14 @@ public class RestartGame : MonoBehaviour
     void ButtonClicked() 
     {
         Debug.Log("Restart game");
-        SceneManager.LoadScene (sceneName:"SampleScene");
+        if (!isAndroid)
+        {
+            SceneManager.LoadScene(sceneName: "SampleScene");
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName: "AndroidVersion");
+        }
     }
 
     // Update is called once per frame

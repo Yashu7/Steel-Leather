@@ -6,14 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
-    guid: 7d6edbf372a2f434487170447e095c91
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/SplashScreen.unity
     guid: f9cf1d10804c74f95b25a77c18b22f67
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/AndroidStart.unity
+    guid: bac3485705a12ad4b9010d8fe4024a1f
+  - enabled: 1
+    path: Assets/Scenes/AndroidVersion.unity
+    guid: cd3ea9b130048e648950ea31a7525de1
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 2a6768cef6e5943ed98ed3c3dd048ec9
