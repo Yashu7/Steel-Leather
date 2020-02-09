@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class SlotBehaviour : MonoBehaviour
 {
+
+    public bool isAndroid;
+
     private List<GameObject> parts = new List<GameObject>();
     public List<Sprite> partSprite = new List<Sprite>();
     public List<Sprite> damagedPartSprite = new List<Sprite>();
@@ -45,18 +48,22 @@ public class SlotBehaviour : MonoBehaviour
 
         float parentX = gameObject.transform.position.x;
         float parentY = gameObject.transform.position.y + 1;
-        //Helmet
-        AddPart(parentX, parentY + 0.1F, RandomItem(broken));
-        //Left Hand
-        AddPart(parentX - partOffset - 0.1F, parentY - partOffset, RandomItem(broken));
-        //Right Hand
-        AddPart(parentX + partOffset + 0.1F, parentY - partOffset, RandomItem(broken));
-        //Breast Plate
-        AddPart(parentX, parentY - (partOffset + 0.25F),RandomItem(broken));
-        //Left Leg
-        AddPart(parentX - partOffset + 0.5F, parentY - (partOffset * 2.4F), RandomItem(broken));
-        //Right Leg
-        AddPart(parentX + partOffset - 0.5F, parentY - (partOffset * 2.4F), RandomItem(broken));
+        if (!isAndroid)
+        {
+            //Helmet
+            AddPart(parentX, parentY + 0.1F, RandomItem(broken));
+            //Left Hand
+            AddPart(parentX - partOffset - 0.1F, parentY - partOffset, RandomItem(broken));
+            //Right Hand
+            AddPart(parentX + partOffset + 0.1F, parentY - partOffset, RandomItem(broken));
+            //Breast Plate
+            AddPart(parentX, parentY - (partOffset + 0.25F), RandomItem(broken));
+            //Left Leg
+            AddPart(parentX - partOffset + 0.5F, parentY - (partOffset * 2.4F), RandomItem(broken));
+            //Right Leg
+            AddPart(parentX + partOffset - 0.5F, parentY - (partOffset * 2.4F), RandomItem(broken));
+        }
+     
 
 
         counter.GetComponent<CounterBehaviour>().Restart();

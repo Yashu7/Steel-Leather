@@ -11,6 +11,7 @@ public class PopUpText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.GetComponent<Text>().text = "";
         startPosition = gameObject.transform.position;
         cr = gameObject.GetComponent<Text>().color;
         
@@ -26,6 +27,7 @@ public class PopUpText : MonoBehaviour
         gameObject.GetComponent<Text>().text = message1 + message2.ToString();
         StartCoroutine(fadeOut());
         StartCoroutine(FadeOutRoutine());
+        gameObject.transform.position = startPosition;
 
     }
     private IEnumerator FadeOutRoutine()
