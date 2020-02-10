@@ -48,14 +48,22 @@ public class PlayerInventory : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.W))
         {
                  Debug.Log("W pressed");
-                BuySteel();
+                BuySteel(1);
         }
         if(Input.GetKeyDown(KeyCode.Q))
         {
                  Debug.Log("Q pressed");
-                BuyLeather();
+                BuyLeather(1);
         }
-        
+
+        if (Gold < 0)
+        {
+            //todo refactor to sepeate script
+            Debug.Log("Load game over scene");
+            SceneManager.LoadScene(sceneName: "GameOver");
+        }
+       
+
     }
    
     public int DeduceLeatherCost(int cost)
@@ -106,29 +114,26 @@ public class PlayerInventory : MonoBehaviour
     }
     public void DeduceGold(int prize)
     {
-        if(Gold < 1) {
-            //todo refactor to sepeate script
-            Debug.Log("Load game over scene");
-            SceneManager.LoadScene (sceneName:"GameOver");
-        }
+        
         Gold = Gold - prize;
     }
-    public void BuyLeather()
+    
+    public void BuyLeather(int amount)
     {
         
-        if (HowMuchGold() >= 10)
+        if (HowMuchGold() >= 10*amount)
         {
-            DeduceGold(10);
-            Leather++;
+            DeduceGold(10*amount);
+            Leather = Leather + amount;
         }
         
     }
-    public void BuySteel()
+    public void BuySteel(int amount)
     {
-        if (HowMuchGold() >= 10)
+        if (HowMuchGold() >= 10*amount)
         {
-            DeduceGold(10);
-            Steel++;
+            DeduceGold(10*amount);
+            Steel = Steel + amount;
         }
     }
     public int HowMuchGold()

@@ -7,6 +7,7 @@ public class BuyMoreSteel : MonoBehaviour
 {
     public GameObject gameGenerator;
     public Button buy;
+    public int amount;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class BuyMoreSteel : MonoBehaviour
     void ButtonClicked()
     {
        
-        gameGenerator.GetComponent<PlayerInventory>().BuySteel();
+        gameGenerator.GetComponent<PlayerInventory>().BuySteel(amount);
     
     }
 }
