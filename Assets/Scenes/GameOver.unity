@@ -400,7 +400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0a7713fb0df3ab643a1a147228a6749e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c422ee6570973d489e089fa819f147f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -750,7 +750,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hit me one more time
+  m_Text: Try Again
 --- !u!222 &867496829
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1191,7 +1191,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0a7713fb0df3ab643a1a147228a6749e,
+      objectReference: {fileID: 21300000, guid: 7c422ee6570973d489e089fa819f147f,
         type: 3}
     - target: {fileID: 2824012930421494178, guid: 568d3f77d09fb453faa2115c76b0780a,
         type: 3}
@@ -1307,6 +1307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824012930458211974, guid: 568d3f77d09fb453faa2115c76b0780a,
+        type: 3}
+      propertyPath: m_Text
+      value: Quit Game
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 568d3f77d09fb453faa2115c76b0780a, type: 3}
