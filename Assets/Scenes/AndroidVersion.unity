@@ -1792,7 +1792,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1336469015}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 --- !u!1 &624873426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,9 +1959,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialBoard: {fileID: 2810620717563214247, guid: 5e94f03aee89e2244a6e646f7d26c04b,
     type: 3}
-  isTutorial: 1
+  isTutorial: 0
   firstBoard: {fileID: 0}
   textTutorial: {fileID: 0}
+  canvasTutorial: {fileID: 0}
 --- !u!114 &624873433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1977,8 +1977,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialTexts: []
   steps: 0
-=======
->>>>>>> f2a494b18343f93e9f9d018efd9de57533aeffec
 --- !u!1 &746842451
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,6 +2333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c8df07b9334d7418c531451eda9cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTutorial: 0
 --- !u!1 &944486496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,7 +2692,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 0}
   cr: {r: 0, g: 0, b: 0, a: 0}
-<<<<<<< HEAD
 --- !u!1 &1225403440
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,7 +2722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158193be47881b84e927f71051ccd147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeStop: 0
   pauseEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2754,8 +2751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69efaef8b7d5f5a4db3347d09957b9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> f2a494b18343f93e9f9d018efd9de57533aeffec
 --- !u!1001 &1230684767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5257,10 +5252,7 @@ RectTransform:
   - {fileID: 1838092230}
   - {fileID: 195078056}
   - {fileID: 276273986}
-<<<<<<< HEAD
   - {fileID: 624873428}
-=======
->>>>>>> f2a494b18343f93e9f9d018efd9de57533aeffec
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
