@@ -16,7 +16,11 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - Pause
+=======
+  - 
+>>>>>>> f2a494b18343f93e9f9d018efd9de57533aeffec
   - 
   - 
   - 
@@ -44,6 +48,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: PauseLayer
     uniqueID: 4060325857
     locked: 0
+=======
+>>>>>>> f2a494b18343f93e9f9d018efd9de57533aeffec
