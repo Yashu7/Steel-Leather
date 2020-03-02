@@ -15,6 +15,10 @@ public class Tutorial : MonoBehaviour
     {
         StartTutorial("Tap to Begin");
     }
+    public void startTutorial()
+    {
+        isTutorial = true;
+    }
 
     // Update is called once per frame
     void Update()

@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: -580}
+  m_AnchoredPosition: {x: 7, y: -580}
   m_SizeDelta: {x: 54.049988, y: 48.571}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &53067490
@@ -491,7 +491,7 @@ RectTransform:
   m_GameObject: {fileID: 154577356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 3, z: 1}
+  m_LocalScale: {x: 2.5, y: 3.5, z: 1}
   m_Children:
   - {fileID: 944486497}
   m_Father: {fileID: 2054700279}
@@ -1809,11 +1809,11 @@ GameObject:
   - component: {fileID: 624873433}
   m_Layer: 8
   m_Name: MenuCloak
-  m_TagString: Untagged
+  m_TagString: Tutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &624873427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2160,7 +2160,7 @@ RectTransform:
   m_GameObject: {fileID: 764600878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2784672, y: 2.8967247, z: 1.4713522}
+  m_LocalScale: {x: 1.5, y: 3.5, z: 1.4713522}
   m_Children:
   - {fileID: 471460143}
   m_Father: {fileID: 461125694}
@@ -2168,7 +2168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 228, y: -512}
+  m_AnchoredPosition: {x: 222, y: -510}
   m_SizeDelta: {x: 127, y: 25.820007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764600880
@@ -2333,7 +2333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c8df07b9334d7418c531451eda9cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTutorial: 0
+  isStartTutorial: 0
+  tutorialStarter: {fileID: 0}
 --- !u!1 &944486496
 GameObject:
   m_ObjectHideFlags: 0
@@ -3371,7 +3372,7 @@ RectTransform:
   m_GameObject: {fileID: 1340502832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 3, z: 1}
+  m_LocalScale: {x: 2.5, y: 3.5, z: 1}
   m_Children:
   - {fileID: 1319673238}
   m_Father: {fileID: 2054700279}
@@ -3379,7 +3380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -303, y: -413}
+  m_AnchoredPosition: {x: -303, y: -409}
   m_SizeDelta: {x: 73.135, y: 24.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1340502834
@@ -3772,7 +3773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.1000004, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1367260628
@@ -4103,7 +4104,7 @@ RectTransform:
   m_GameObject: {fileID: 1546291970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 3, z: 1}
+  m_LocalScale: {x: 2.5, y: 3.5, z: 1}
   m_Children:
   - {fileID: 1264061901}
   m_Father: {fileID: 2054700279}
@@ -4807,7 +4808,7 @@ RectTransform:
   m_GameObject: {fileID: 1838092229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 3, z: 1}
+  m_LocalScale: {x: 2.5, y: 3.5, z: 1}
   m_Children:
   - {fileID: 309751377}
   m_Father: {fileID: 2054700279}
@@ -5034,7 +5035,7 @@ RectTransform:
   m_GameObject: {fileID: 2000183402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.278467, y: 2.896725, z: 1.471352}
+  m_LocalScale: {x: 1.5, y: 3.5, z: 1.471352}
   m_Children:
   - {fileID: 1477349056}
   m_Father: {fileID: 1360838638}
@@ -5042,7 +5043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 333, y: -512}
+  m_AnchoredPosition: {x: 335, y: -516}
   m_SizeDelta: {x: 129.8, y: 26.975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2000183404

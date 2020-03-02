@@ -818,6 +818,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 7406466325416864248, guid: aef9ba897efb50b4bba583d6987d3092,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7406466325416864250, guid: aef9ba897efb50b4bba583d6987d3092,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -886,7 +891,7 @@ PrefabInstance:
     - target: {fileID: 7406466325416864251, guid: aef9ba897efb50b4bba583d6987d3092,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -91.99999
+      value: -91.999985
       objectReference: {fileID: 0}
     - target: {fileID: 7406466325416864251, guid: aef9ba897efb50b4bba583d6987d3092,
         type: 3}
@@ -971,7 +976,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c8df07b9334d7418c531451eda9cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTutorial: 0
+  isStartTutorial: 0
+  tutorialStarter: {fileID: 0}
 --- !u!4 &2000736809
 Transform:
   m_ObjectHideFlags: 0
@@ -1231,7 +1237,7 @@ PrefabInstance:
     - target: {fileID: 7406466325416864251, guid: aef9ba897efb50b4bba583d6987d3092,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -204
+      value: -203.99998
       objectReference: {fileID: 0}
     - target: {fileID: 7406466325416864251, guid: aef9ba897efb50b4bba583d6987d3092,
         type: 3}

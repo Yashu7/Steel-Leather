@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Job
   - Clicked
+  - Tutorial
   layers:
   - Default
   - TransparentFX
